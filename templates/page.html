@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# books: http://ogp.me/ns/books#">
+  {% block head %}
+  <title>{{title}}</title>
+  <meta charset="utf8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="{{description | striptags}}" />
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" sizes="192x192" href="icon.jpg">
+
+  <!-- Open graph tags for books -->
+  <meta property="og:type" content="books.book" />
+  <meta property="og:url" content="{{base_url | safe}}/{{chapter.filename}}" />
+  <meta property="og:title" content="{{title}}" />
+  <meta property="og:image" content="{{base_url | safe}}/cover.jpg" />
+  <meta property="og:description" content="{{ description | striptags }}" />
+  <meta property="books:author" content="{{author}}" />
+
+  <!-- Twitter Card markup-->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="{{base_url | safe}}/{{chapter.filename}}">
+  <meta name="twitter:title" content="{{title}}">
+  <meta name="twitter:description" content="{{ description | striptags}}">
+  <meta name="twitter:creator" content="{{author}}">
+  <!-- Twitter summary card with large image must be at least 280x150px -->
+  <meta name="twitter:image" content="{{base_url | safe}}/cover.jpg">
+  <meta name="twitter:image:alt" content="book cover">
+  <link rel="stylesheet" href="resources/static/normalize.css">
+  <link rel="stylesheet" href="resources/static/reader.css">
+  <link rel="stylesheet" href="resources/static/mobile.css">
+  <link rel="stylesheet" href="resources/stylesheet.css">
+  <script defer src="resources/static/app.js"></script> {% endblock head %}
+</head>
+
+<body>
+  <header>
+    <span id="reader-toc">
+      <a href="toc.html">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round" class="feather feather-list">
+          <line x1="8" y1="6" x2="21" y2="6"></line>
+          <line x1="8" y1="12" x2="21" y2="12"></line>
+          <line x1="8" y1="18" x2="21" y2="18"></line>
+          <line x1="3" y1="6" x2="3" y2="6"></line>
+          <line x1="3" y1="12" x2="3" y2="12"></line>
+          <line x1="3" y1="18" x2="3" y2="18"></line>
+        </svg>
+      </a>
+    </span>
+    <div class="meta">
+      <h1>{{title}}</h1>
+    </div>
+    <span id="reader-navigation">
+      {% if previous %}
+      <a href="{{previous}}">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+      </a>
+      {% endif %} {% if next %}
+      <a href="{{next}}">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </a>
+      {% endif %}
+    </span>
+  </header>
+  {% block content %}
+  <div class="book-content">
+    {{ content | safe}}
+  </div>
+  {% endblock content %}
+</body>
+
+</html>

@@ -17,18 +17,24 @@
 	header span {
 		display: inline;
 	}
-	header span svg {
+	header span a svg {
 		color: #FFF;
 		max-height: 48px;
 	}
-	span#reader-toc {
+	span#reader-toc a svg {
 		cursor: pointer;
+		max-height: 48px;
+		width: auto;
 	}
-	svg#go-previous {
+	a.go-previous svg {
 		cursor: pointer;
+		max-height: 48px;
+		width: auto;
 	}
-	svg#go-next {
+	a.go-next svg {
 		cursor: pointer;
+		max-height: 48px;
+		width: auto;
 	}
 	header span#reader-navigation {
 		color: #FFF;

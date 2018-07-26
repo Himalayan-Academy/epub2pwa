@@ -85,6 +85,13 @@ fn copy_index_to_cover(output_root: &Path) {
     ).expect("Can't create cover.html");
 }
 
+fn move_service_worker(output_root: &Path) {
+    fs::copy(
+        output_root.join("resources/static/sw.js"),
+        output_root.join("sw.js"),
+    ).expect("Can't create sw.js");
+}
+
 fn get_metadata(book: &Book) -> HashMap<&str, String> {
     let input_file = &book.epub;
     let doc = EpubDoc::new(input_file).unwrap();
@@ -458,6 +465,7 @@ fn process_book(book: &Book) {
     process_toc(&book.epub, &metadata, &toc_id, &output_root);
     process_manifest(&book.epub, &metadata, &output_root);
     copy_index_to_cover(&output_root);
+    move_service_worker(&output_root);
 }
 
 fn process_batch_job(path: &str) {

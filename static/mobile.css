@@ -16,10 +16,19 @@
   }
   header span {
     display: inline;
+    padding-left: 10px;
   }
   header span svg {
     color: #FFF;
     max-height: 48px;
+    width: unset;
+    padding-left: 3px;
+    padding-right: 3px;
+  }
+  a>svg {
+    width: unset;
+    margin: unset;
+    height: 40px;
   }
   span#reader-toc {
     cursor: pointer;
@@ -30,16 +39,29 @@
   svg#go-next {
     cursor: pointer;
   }
-  header span#reader-navigation {
+  span#reader-navigation {
+    display: none;
+  }
+  span#reader-navigation-mobile {
     color: #FFF;
     display: flex;
-    padding-right: 20px;
-    padding-left: 20px;
-    cursor: pointer;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    height: 42px;
+    flex-direction: row;
+    align-items: space-between;
+    background-color: black;
+    vertical-align: middle;
   }
-  header span#reader-navigation a {
-    padding-left: 20px;
-    padding-left: 20px;
+  span#reader-navigation-mobile div.navigation-spacer {
+    flex: 1 1 auto;
+  }
+  span#reader-navigation-mobile a:visited {
+    color: #FFF;
+  }
+  span#reader-navigation-mobile a {
+    color: #FFF;
   }
   header div.meta {
     flex: 1 1 auto;
@@ -48,7 +70,7 @@
   }
   header div.meta h1 {
     display: inline;
-    font-size: 1.1em;
+    font-size: 1.6em;
   }
   header div.meta h2 {
     display: inline;
@@ -67,6 +89,7 @@
   .book-content {
     padding-left: 1rem;
     padding-right: 1rem;
+    margin-bottom: 60px;
   }
   .cover {
     max-height: 70%;

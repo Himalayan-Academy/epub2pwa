@@ -20,21 +20,18 @@
 	header span a svg {
 		color: #FFF;
 		max-height: 48px;
+		width: unset;
 	}
 	span#reader-toc a svg {
 		cursor: pointer;
 		max-height: 48px;
 		width: auto;
 	}
-	a.go-previous svg {
+	a>svg {
 		cursor: pointer;
 		max-height: 48px;
 		width: auto;
-	}
-	a.go-next svg {
-		cursor: pointer;
-		max-height: 48px;
-		width: auto;
+		color: #FFF;
 	}
 	header span#reader-navigation {
 		color: #FFF;
@@ -42,6 +39,9 @@
 		padding-right: 20px;
 		padding-left: 20px;
 		cursor: pointer;
+	}
+	span#reader-navigation-mobile {
+		display: none;
 	}
 	header span#reader-navigation a {
 		padding-left: 20px;

@@ -5,19 +5,19 @@ if (workbox) {
   // cache js
   workbox.routing.registerRoute(
     new RegExp('.*\.js'),
-    workbox.strategies.networkFirst()
+    workbox.strategies.staleWhileRevalidate()
   );
 
   // cache images
   workbox.routing.registerRoute(
     /\.(?:png|gif|jpg|jpeg|svg)$/,
-    workbox.strategies.cacheFirst(),
+    workbox.strategies.staleWhileRevalidate(),
   );
 
   // cache HTML
   workbox.routing.registerRoute(
     /\.(?:html|css)$/,
-    workbox.strategies.cacheFirst(),
+    workbox.strategies.staleWhileRevalidate(),
   );
 }
 

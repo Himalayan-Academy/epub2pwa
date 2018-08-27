@@ -1,16 +1,5 @@
 /* 
-todo: add support for configuration json
-
-{
-    "template": "template/**/*",
-    "books": [
-        {
-            epub: "path to epub",
-            url: "url for book, file_id and stuff",
-            output: "destination folder"
-        }
-    ]
-}
+add timestamp to all HTML includes and the respective file names
 
 */
 #![feature(nll)]
@@ -39,6 +28,7 @@ use std::fs;
 use std::fs::File;
 use std::io::{self, Write};
 use std::path::Path;
+use std::time::{SystemTime, UNIX_EPOCH};
 use tera::{Context, Tera};
 
 const MAX_WIDTH: u32 = 400;
@@ -90,6 +80,27 @@ fn move_service_worker(output_root: &Path) {
         output_root.join("resources/static/sw.js"),
         output_root.join("sw.js"),
     ).expect("Can't create sw.js");
+
+    //todo: add timestamp renaming here
+
+    // let start = SystemTime::now();
+    // let since_the_epoch = start
+    //     .duration_since(UNIX_EPOCH)
+    //     .expect("Time went backwards");
+    // let secs = since_the_epoch.as_secs().to_string();
+
+    // // renaming CSS
+    // fs::rename(
+    //     output_root.join("resources/static/mobile.css"),
+    //     output_root.join(format!("resources/static/mobile.{}.css", &secs)),
+    // ).expect("Can't rename mobile.css");
+
+    // fs::rename(
+    //     output_root.join("resources/static/reader.css"),
+    //     output_root.join(format!("resources/static/reader.{}.css", &secs)),
+    // ).expect("Can't rename reader.css");
+
+    // // update all HTML.
 }
 
 fn get_metadata(book: &Book) -> HashMap<&str, String> {

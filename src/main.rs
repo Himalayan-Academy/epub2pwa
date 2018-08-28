@@ -497,6 +497,13 @@ fn process_batch_job(path: &str) {
 
     // Print, write to a file, or send to an HTTP server.
     println!("{}", j);
+
+    let start = SystemTime::now();
+    let since_the_epoch = start
+        .duration_since(UNIX_EPOCH)
+        .expect("Time went backwards");
+    let secs = since_the_epoch.as_secs().to_string();
+    fs::write(format!("batchjob.{}.json", &secs), &j).expect("Can't write batch report");
 }
 
 fn main() {

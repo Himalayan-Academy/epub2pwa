@@ -35,9 +35,11 @@
   }
   svg#go-previous {
     cursor: pointer;
+    padding-left: 2px;
   }
   svg#go-next {
     cursor: pointer;
+    padding-right: 2px;
   }
   span#reader-navigation {
     display: none;
@@ -53,6 +55,7 @@
     align-items: space-between;
     background-color: black;
     vertical-align: middle;
+    padding: 2px;
   }
   span#reader-navigation-mobile div.navigation-spacer {
     flex: 1 1 auto;

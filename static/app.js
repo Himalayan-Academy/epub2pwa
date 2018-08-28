@@ -4,21 +4,20 @@ if ('serviceWorker' in navigator) {
 }
 
 function navigateWithArrows(ev) {
-  var nextPage = document.querySelector("a.go-next").getAttribute("href");
-  var previousPage = document.querySelector("a.go-previous").getAttribute("href");
-  var toc = document.querySelector("span#reader-toc a").getAttribute("href");
   switch (ev.key) {
     case "ArrowLeft":
+      var previousPage = document.querySelector("a.go-previous").getAttribute("href");
       window.location = previousPage;
       break;
     case "ArrowRight":
+      var nextPage = document.querySelector("a.go-next").getAttribute("href");
       window.location = nextPage;
       break;
     case "Escape":
+      var toc = document.querySelector("span#reader-toc a").getAttribute("href");
       window.location = toc;
       break;
   }
-
   ev.preventDefault();
 }
 

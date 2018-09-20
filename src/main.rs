@@ -115,6 +115,40 @@ fn compress_cover(book: &Book) {
     match cover_data {
         Err(error) => {
             println!("this book has no cover: {}", &error);
+            // create cover html ...
+            let metadata = get_metadata(&book);
+
+            let mut ctx = Context::new();
+            for (key, val) in metadata.into_iter() {
+                ctx.add(key, &val);
+            }
+
+            let mut chapter = HashMap::new();
+            chapter.insert("title", "Table of Contents");
+            chapter.insert("filename", "index.html");
+
+            ctx.add("chapter", &chapter);
+
+            let next_chapter_id = if doc.spine.len() > 2 {
+                &doc.spine[2]
+            } else {
+                &doc.spine[0]
+            };
+            let next_chapter = &doc.resources.get(next_chapter_id);
+
+            match next_chapter {
+                Some(s) => ctx.add("next", extract_filename(&s.0)),
+                None => ctx.add("next", &false),
+            }
+
+            let rendered = TERA
+                .render("index.html", &ctx)
+                .expect("Failed to render template");
+
+            let f = fs::File::create(output_root.join("index.html"));
+            assert!(f.is_ok());
+            let mut f = f.unwrap();
+            let _resp = f.write_all(&rendered.as_bytes());
         }
         Ok(data) => {
             let f = fs::File::create("temp/cover.jpg");
@@ -501,12 +535,12 @@ fn process_batch_job(path: &str) {
         if Path::new(&book.epub).exists() {
             process_book(&book);
             &processed.push(book.clone());
-            println!("webapp: {}", &book.output_folder);
+            println!("webapp: {}", &book.base_url);
         } else {
             &non_processed.push(book.clone());
             println!("can't find book file: {}", &book.epub);
         }
-        println!("\n");
+        // println!("\n");
     }
 
     // Serialize it to a JSON string.

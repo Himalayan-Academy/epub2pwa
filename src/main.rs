@@ -125,7 +125,7 @@ fn compress_cover(book: &Book) {
         .expect("Saving image failed");
 
     let ref mut background = image::RgbaImage::new(ICON_WIDTH, ICON_WIDTH);
-    for (x, y, pixel) in background.enumerate_pixels_mut() {
+    for (_x, _y, pixel) in background.enumerate_pixels_mut() {
         *pixel = image::Rgba([33, 33, 33, 0]);
     }
 

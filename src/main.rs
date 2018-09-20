@@ -110,7 +110,7 @@ fn compress_cover(book: &Book) {
     assert!(doc.is_ok());
     let mut doc = doc.unwrap();
     println!("Extracting cover...");
-    let cover_data = doc.get_cover().unwrap();
+    let cover_data = doc.get_cover().expect("can't get cover...");
 
     let f = fs::File::create("temp/cover.jpg");
     assert!(f.is_ok());
@@ -160,7 +160,11 @@ fn compress_cover(book: &Book) {
 
     ctx.add("chapter", &chapter);
 
-    let next_chapter_id = &doc.spine[2];
+    let next_chapter_id = if doc.spine.len() > 2 {
+        &doc.spine[2]
+    } else {
+        &doc.spine[0]
+    };
     let next_chapter = &doc.resources.get(next_chapter_id);
 
     match next_chapter {
@@ -250,6 +254,8 @@ fn process_toc(input_file: &str, metadata: &HashMap<&str, String>, key: &str, ou
     ctx.add("chapter", &chapter);
 
     //  write fragment
+    println!("toc key {}", &key);
+
     let str_data = doc.get_resource_str(key);
 
     let fixed_content = str_data.unwrap().replace("../images", "images");
@@ -297,6 +303,8 @@ fn process_html_resource(
     ctx.add("chapter", &chapter);
 
     //  write fragment
+    // println!("chap key {}", &key);
+
     let str_data = doc.get_resource_str(key);
 
     let fixed_content = str_data.unwrap().replace("../images", "images");
@@ -410,9 +418,10 @@ fn process_book(book: &Book) {
     let _resp = fs::create_dir_all("temp/images/"); // needed because resize lib wants to work with files
 
     // assemble destination folder
+    let _resp = fs::remove_dir_all(&output_root);
     let _resp = fs::create_dir_all(&output_root);
-    let _resp = fs::create_dir_all(output_root.join("images/"));
-    let _resp = fs::create_dir_all(output_root.join("resources/"));
+    let _resp = fs::create_dir_all(output_root.join("images"));
+    let _resp = fs::create_dir_all(output_root.join("resources"));
 
     let metadata = get_metadata(&book);
     println!(
@@ -459,10 +468,18 @@ fn process_book(book: &Book) {
         }
         let _r = io::stdout().flush();
     }
-    process_toc(&book.epub, &metadata, &toc_id, &output_root);
+
     process_manifest(&book.epub, &metadata, &output_root);
     copy_index_to_cover(&output_root);
     move_service_worker(&output_root);
+
+    if toc_id != "" {
+        process_toc(&book.epub, &metadata, &toc_id, &output_root);
+    } else {
+        println!("book has no TOC, will link to cover");
+        fs::copy(output_root.join("cover.html"), output_root.join("toc.html"))
+            .expect("Can't create toc.html");
+    }
 }
 
 fn process_batch_job(path: &str) {
@@ -472,24 +489,33 @@ fn process_batch_job(path: &str) {
     // Read the JSON contents of the file as an instance of `User`.
     let batch: BatchJob = serde_json::from_reader(file).expect("Can't decode batch job json file");
     let mut processed: Vec<Book> = vec![];
+    let mut non_processed: Vec<Book> = vec![];
     for book in batch.books {
-        process_book(&book);
-        &processed.push(book.clone());
+        if Path::new(&book.epub).exists() {
+            process_book(&book);
+            &processed.push(book.clone());
+        } else {
+            &non_processed.push(book.clone());
+            println!("can't find book file: {}", &book.epub);
+        }
         println!("\n");
     }
 
     // Serialize it to a JSON string.
     let j = serde_json::to_string(&processed).expect("Can't display processed queue");
+    let nj = serde_json::to_string(&non_processed).expect("Can't display non processed queue");
 
     // Print, write to a file, or send to an HTTP server.
-    println!("{}", j);
 
     let start = SystemTime::now();
     let since_the_epoch = start
         .duration_since(UNIX_EPOCH)
         .expect("Time went backwards");
     let secs = since_the_epoch.as_secs().to_string();
-    fs::write(format!("batchjob.{}.json", &secs), &j).expect("Can't write batch report");
+    fs::write(format!("batchjob.{}.success.json", &secs), &j)
+        .expect("Can't write success batch report");
+    fs::write(format!("batchjob.{}.errors.json", &secs), &nj)
+        .expect("Can't write error batch report");
 }
 
 fn main() {

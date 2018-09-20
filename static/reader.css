@@ -33,6 +33,9 @@
 		width: auto;
 		color: #FFF;
 	}
+	header span#reader-toc a {
+		padding-right: 10px;
+	}
 	header span#reader-navigation {
 		color: #FFF;
 		display: flex;

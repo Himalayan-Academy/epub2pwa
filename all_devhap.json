@@ -1,0 +1,1496 @@
+{
+  "template": "",
+  "books": [
+    {
+      "description": "",
+      "output_folder": "../../media/books/*double*karma-management_ru/*double*karma-management_ru/web",
+      "info_url": "https://www.himalayanacademy.com/view/*double*karma-management_ru",
+      "base_url": "https://www.himalayanacademy.com/media/books/*double*karma-management_ru/web",
+      "epub": "../../media/books/*double*karma-management_ru/*double*karma-management_ru.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/12-beliefs-of-saivism_ei/12-beliefs-of-saivism_ei/web",
+      "info_url": "https://www.himalayanacademy.com/view/12-beliefs-of-saivism_ei",
+      "base_url": "https://www.himalayanacademy.com/media/books/12-beliefs-of-saivism_ei/web",
+      "epub": "../../media/books/12-beliefs-of-saivism_ei/12-beliefs-of-saivism_ei.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/6-muruga-temple-pilgrimage_ei/6-muruga-temple-pilgrimage_ei/web",
+      "info_url": "https://www.himalayanacademy.com/view/6-muruga-temple-pilgrimage_ei",
+      "base_url": "https://www.himalayanacademy.com/media/books/6-muruga-temple-pilgrimage_ei/web",
+      "epub": "../../media/books/6-muruga-temple-pilgrimage_ei/6-muruga-temple-pilgrimage_ei.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/a-creed-of-monasticism_ei/a-creed-of-monasticism_ei/web",
+      "info_url": "https://www.himalayanacademy.com/view/a-creed-of-monasticism_ei",
+      "base_url": "https://www.himalayanacademy.com/media/books/a-creed-of-monasticism_ei/web",
+      "epub": "../../media/books/a-creed-of-monasticism_ei/a-creed-of-monasticism_ei.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/aging-gracefully_ei/aging-gracefully_ei/web",
+      "info_url": "https://www.himalayanacademy.com/view/aging-gracefully_ei",
+      "base_url": "https://www.himalayanacademy.com/media/books/aging-gracefully_ei/web",
+      "epub": "../../media/books/aging-gracefully_ei/aging-gracefully_ei.epub"
+    },
+    {
+      "description": "Exploring Non-Injury as a Way to Achieve Harmony with Our Environment, Peace Between Peoples and Compassion Within Ourselves.\n\n",
+      "output_folder": "../../media/books/ahimsa-to-do-no-harm_ei/ahimsa-to-do-no-harm_ei/web",
+      "info_url": "https://www.himalayanacademy.com/view/ahimsa-to-do-no-harm_ei",
+      "base_url": "https://www.himalayanacademy.com/media/books/ahimsa-to-do-no-harm_ei/web",
+      "epub": "../../media/books/ahimsa-to-do-no-harm_ei/ahimsa-to-do-no-harm_ei.epub"
+    },
+    {
+      "description": "All you need to know about Kauai's Hindu Monastery, lineage, history, temples, mission and how to get here in a small booklet that you can read in 20 minutes.",
+      "output_folder": "../../media/books/all-about-kauai-hindu-monastery/all-about-kauai-hindu-monastery/web",
+      "info_url": "https://www.himalayanacademy.com/view/all-about-kauai-hindu-monastery",
+      "base_url": "https://www.himalayanacademy.com/media/books/all-about-kauai-hindu-monastery/web",
+      "epub": "../../media/books/all-about-kauai-hindu-monastery/all-about-kauai-hindu-monastery.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/amoroso-ganesha_es/amoroso-ganesha_es/web",
+      "info_url": "https://www.himalayanacademy.com/view/amoroso-ganesha_es",
+      "base_url": "https://www.himalayanacademy.com/media/books/amoroso-ganesha_es/web",
+      "epub": "../../media/books/amoroso-ganesha_es/amoroso-ganesha_es.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/andre-super-book/andre-super-book/web",
+      "info_url": "https://www.himalayanacademy.com/view/andre-super-book",
+      "base_url": "https://www.himalayanacademy.com/media/books/andre-super-book/web",
+      "epub": "../../media/books/andre-super-book/andre-super-book.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/andre-super-test/andre-super-test/web",
+      "info_url": "https://www.himalayanacademy.com/view/andre-super-test",
+      "base_url": "https://www.himalayanacademy.com/media/books/andre-super-test/web",
+      "epub": "../../media/books/andre-super-test/andre-super-test.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/andre-test-book/andre-test-book/web",
+      "info_url": "https://www.himalayanacademy.com/view/andre-test-book",
+      "base_url": "https://www.himalayanacademy.com/media/books/andre-test-book/web",
+      "epub": "../../media/books/andre-test-book/andre-test-book.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/andre-test-mistake_ei/andre-test-mistake_ei/web",
+      "info_url": "https://www.himalayanacademy.com/view/andre-test-mistake_ei",
+      "base_url": "https://www.himalayanacademy.com/media/books/andre-test-mistake_ei/web",
+      "epub": "../../media/books/andre-test-mistake_ei/andre-test-mistake_ei.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/anger-management_ei/anger-management_ei/web",
+      "info_url": "https://www.himalayanacademy.com/view/anger-management_ei",
+      "base_url": "https://www.himalayanacademy.com/media/books/anger-management_ei/web",
+      "epub": "../../media/books/anger-management_ei/anger-management_ei.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/approaching-god_ei/approaching-god_ei/web",
+      "info_url": "https://www.himalayanacademy.com/view/approaching-god_ei",
+      "base_url": "https://www.himalayanacademy.com/media/books/approaching-god_ei/web",
+      "epub": "../../media/books/approaching-god_ei/approaching-god_ei.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/atti-chudi/atti-chudi/web",
+      "info_url": "https://www.himalayanacademy.com/view/atti-chudi",
+      "base_url": "https://www.himalayanacademy.com/media/books/atti-chudi/web",
+      "epub": "../../media/books/atti-chudi/atti-chudi.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/bhojana-mantra/bhojana-mantra/web",
+      "info_url": "https://www.himalayanacademy.com/view/bhojana-mantra",
+      "base_url": "https://www.himalayanacademy.com/media/books/bhojana-mantra/web",
+      "epub": "../../media/books/bhojana-mantra/bhojana-mantra.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/bodhinatha-ashtottara/bodhinatha-ashtottara/web",
+      "info_url": "https://www.himalayanacademy.com/view/bodhinatha-ashtottara",
+      "base_url": "https://www.himalayanacademy.com/media/books/bodhinatha-ashtottara/web",
+      "epub": "../../media/books/bodhinatha-ashtottara/bodhinatha-ashtottara.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/cancao-do-sannyasin/cancao-do-sannyasin/web",
+      "info_url": "https://www.himalayanacademy.com/view/cancao-do-sannyasin",
+      "base_url": "https://www.himalayanacademy.com/media/books/cancao-do-sannyasin/web",
+      "epub": "../../media/books/cancao-do-sannyasin/cancao-do-sannyasin.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/character-building-workbook/character-building-workbook/web",
+      "info_url": "https://www.himalayanacademy.com/view/character-building-workbook",
+      "base_url": "https://www.himalayanacademy.com/media/books/character-building-workbook/web",
+      "epub": "../../media/books/character-building-workbook/character-building-workbook.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/code-of-conduct_ei/code-of-conduct_ei/web",
+      "info_url": "https://www.himalayanacademy.com/view/code-of-conduct_ei",
+      "base_url": "https://www.himalayanacademy.com/media/books/code-of-conduct_ei/web",
+      "epub": "../../media/books/code-of-conduct_ei/code-of-conduct_ei.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/coloring-books/coloring-books/web",
+      "info_url": "https://www.himalayanacademy.com/view/coloring-books",
+      "base_url": "https://www.himalayanacademy.com/media/books/coloring-books/web",
+      "epub": "../../media/books/coloring-books/coloring-books.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/commencer-a-mediter_fr/commencer-a-mediter_fr/web",
+      "info_url": "https://www.himalayanacademy.com/view/commencer-a-mediter_fr",
+      "base_url": "https://www.himalayanacademy.com/media/books/commencer-a-mediter_fr/web",
+      "epub": "../../media/books/commencer-a-mediter_fr/commencer-a-mediter_fr.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/comment-elever-les-enfants-avec-amour_fr/comment-elever-les-enfants-avec-amour_fr/web",
+      "info_url": "https://www.himalayanacademy.com/view/comment-elever-les-enfants-avec-amour_fr",
+      "base_url": "https://www.himalayanacademy.com/media/books/comment-elever-les-enfants-avec-amour_fr/web",
+      "epub": "../../media/books/comment-elever-les-enfants-avec-amour_fr/comment-elever-les-enfants-avec-amour_fr.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/como-volverse-un-hindu_es/como-volverse-un-hindu_es/web",
+      "info_url": "https://www.himalayanacademy.com/view/como-volverse-un-hindu_es",
+      "base_url": "https://www.himalayanacademy.com/media/books/como-volverse-un-hindu_es/web",
+      "epub": "../../media/books/como-volverse-un-hindu_es/como-volverse-un-hindu_es.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/cultural-cues-and-clues_ei/cultural-cues-and-clues_ei/web",
+      "info_url": "https://www.himalayanacademy.com/view/cultural-cues-and-clues_ei",
+      "base_url": "https://www.himalayanacademy.com/media/books/cultural-cues-and-clues_ei/web",
+      "epub": "../../media/books/cultural-cues-and-clues_ei/cultural-cues-and-clues_ei.epub"
+    },
+    {
+      "description": "A richly illustrated sourcebook of Indian spirituality in question-and-answer form, exploring how to know the Divine, honor all creation and see God everywhere, in everyone. 165 Indian paintings, 600 verses from Hindu holy texts, 40-page timeline of India's history and a 190-page lexicon. ",
+      "output_folder": "../../media/books/dancing-with-siva/dancing-with-siva/web",
+      "info_url": "https://www.himalayanacademy.com/view/dancing-with-siva",
+      "base_url": "https://www.himalayanacademy.com/media/books/dancing-with-siva/web",
+      "epub": "../../media/books/dancing-with-siva/dancing-with-siva.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/dancing-with-siva_mr/dancing-with-siva_mr/web",
+      "info_url": "https://www.himalayanacademy.com/view/dancing-with-siva_mr",
+      "base_url": "https://www.himalayanacademy.com/media/books/dancing-with-siva_mr/web",
+      "epub": "../../media/books/dancing-with-siva_mr/dancing-with-siva_mr.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/dancing-with-siva_ta/dancing-with-siva_ta/web",
+      "info_url": "https://www.himalayanacademy.com/view/dancing-with-siva_ta",
+      "base_url": "https://www.himalayanacademy.com/media/books/dancing-with-siva_ta/web",
+      "epub": "../../media/books/dancing-with-siva_ta/dancing-with-siva_ta.epub"
+    },
+    {
+      "description": "<i>Primer libro de la Trilog\u0004a Curso Magistral. </i> Un libro de referencia ricamente ilustrado sobre espiritualidad de la India en formato de pregunta y respuesta, explorando c\u0006mo conocer la Divinidad, honrar toda la creaci\u0006n y ver a Dios en todos lados y en todas las personas ",
+      "output_folder": "../../media/books/danzando-con-siva_es/danzando-con-siva_es/web",
+      "info_url": "https://www.himalayanacademy.com/view/danzando-con-siva_es",
+      "base_url": "https://www.himalayanacademy.com/media/books/danzando-con-siva_es/web",
+      "epub": "../../media/books/danzando-con-siva_es/danzando-con-siva_es.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/death-and-dying_ei/death-and-dying_ei/web",
+      "info_url": "https://www.himalayanacademy.com/view/death-and-dying_ei",
+      "base_url": "https://www.himalayanacademy.com/media/books/death-and-dying_ei/web",
+      "epub": "../../media/books/death-and-dying_ei/death-and-dying_ei.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/der-selbstgott_de/der-selbstgott_de/web",
+      "info_url": "https://www.himalayanacademy.com/view/der-selbstgott_de",
+      "base_url": "https://www.himalayanacademy.com/media/books/der-selbstgott_de/web",
+      "epub": "../../media/books/der-selbstgott_de/der-selbstgott_de.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/dez-questoes-acerca-do-hinduismo_pt/dez-questoes-acerca-do-hinduismo_pt/web",
+      "info_url": "https://www.himalayanacademy.com/view/dez-questoes-acerca-do-hinduismo_pt",
+      "base_url": "https://www.himalayanacademy.com/media/books/dez-questoes-acerca-do-hinduismo_pt/web",
+      "epub": "../../media/books/dez-questoes-acerca-do-hinduismo_pt/dez-questoes-acerca-do-hinduismo_pt.epub"
+    },
+    {
+      "description": " Allow me to introduce Shri Madhvacharyaalso known as Vasudeva, Purnaprajna and Anandatirthathe famous founder of the Dvaita school of Vedanta and the Brahma Vaishnava Sampradaya, of which I am a devout follower.Through his eloquent preaching and prolific dictation, this one brilliant man gave a new perspective to Vedantic scripture that influences millions of people to this day.",
+      "output_folder": "../../media/books/difference-is-real_ei/difference-is-real_ei/web",
+      "info_url": "https://www.himalayanacademy.com/view/difference-is-real_ei",
+      "base_url": "https://www.himalayanacademy.com/media/books/difference-is-real_ei/web",
+      "epub": "../../media/books/difference-is-real_ei/difference-is-real_ei.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/fabric-begets-fashion_ei/fabric-begets-fashion_ei/web",
+      "info_url": "https://www.himalayanacademy.com/view/fabric-begets-fashion_ei",
+      "base_url": "https://www.himalayanacademy.com/media/books/fabric-begets-fashion_ei/web",
+      "epub": "../../media/books/fabric-begets-fashion_ei/fabric-begets-fashion_ei.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/family-life-monastic-life_ei/family-life-monastic-life_ei/web",
+      "info_url": "https://www.himalayanacademy.com/view/family-life-monastic-life_ei",
+      "base_url": "https://www.himalayanacademy.com/media/books/family-life-monastic-life_ei/web",
+      "epub": "../../media/books/family-life-monastic-life_ei/family-life-monastic-life_ei.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/fine-art-of-meditation_ei/fine-art-of-meditation_ei/web",
+      "info_url": "https://www.himalayanacademy.com/view/fine-art-of-meditation_ei",
+      "base_url": "https://www.himalayanacademy.com/media/books/fine-art-of-meditation_ei/web",
+      "epub": "../../media/books/fine-art-of-meditation_ei/fine-art-of-meditation_ei.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/five-powers-of-siva_ei/five-powers-of-siva_ei/web",
+      "info_url": "https://www.himalayanacademy.com/view/five-powers-of-siva_ei",
+      "base_url": "https://www.himalayanacademy.com/media/books/five-powers-of-siva_ei/web",
+      "epub": "../../media/books/five-powers-of-siva_ei/five-powers-of-siva_ei.epub"
+    },
+    {
+      "description": "For over 200 years, Western scholars have struggled to understand Hinduism, a faith which appeared to outsiders to have a baffling array of spiritual traditions. Few realized that Hinduism is a family of religions with four principal denominationsSaivism, Shaktism, Vaishnavism and Smartism. In this pamphlet these four groups and their divergent and similar beliefs and culture are explored. In eight pages, drawn from Satguru Sivaya Subramuniyaswami's book Dancing with Siva, we offer a synopsis of these four denominations, followed by a point-by-point comparison. Comparative religion teachers find this pamphlet valuable during their study of Hinduism.",
+      "output_folder": "../../media/books/four-denominations-of-hinduism_ei/four-denominations-of-hinduism_ei/web",
+      "info_url": "https://www.himalayanacademy.com/view/four-denominations-of-hinduism_ei",
+      "base_url": "https://www.himalayanacademy.com/media/books/four-denominations-of-hinduism_ei/web",
+      "epub": "../../media/books/four-denominations-of-hinduism_ei/four-denominations-of-hinduism_ei.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/fourteen-questions_ei/fourteen-questions_ei/web",
+      "info_url": "https://www.himalayanacademy.com/view/fourteen-questions_ei",
+      "base_url": "https://www.himalayanacademy.com/media/books/fourteen-questions_ei/web",
+      "epub": "../../media/books/fourteen-questions_ei/fourteen-questions_ei.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/ganesha-puja_bw/ganesha-puja_bw/web",
+      "info_url": "https://www.himalayanacademy.com/view/ganesha-puja_bw",
+      "base_url": "https://www.himalayanacademy.com/media/books/ganesha-puja_bw/web",
+      "epub": "../../media/books/ganesha-puja_bw/ganesha-puja_bw.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/ganesha-puja_color/ganesha-puja_color/web",
+      "info_url": "https://www.himalayanacademy.com/view/ganesha-puja_color",
+      "base_url": "https://www.himalayanacademy.com/media/books/ganesha-puja_color/web",
+      "epub": "../../media/books/ganesha-puja_color/ganesha-puja_color.epub"
+    },
+    {
+      "description": "\n",
+      "output_folder": "../../media/books/god-and-gods-of-hinduism/god-and-gods-of-hinduism/web",
+      "info_url": "https://www.himalayanacademy.com/view/god-and-gods-of-hinduism",
+      "base_url": "https://www.himalayanacademy.com/media/books/god-and-gods-of-hinduism/web",
+      "epub": "../../media/books/god-and-gods-of-hinduism/god-and-gods-of-hinduism.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/god-soul-world_ei/god-soul-world_ei/web",
+      "info_url": "https://www.himalayanacademy.com/view/god-soul-world_ei",
+      "base_url": "https://www.himalayanacademy.com/media/books/god-soul-world_ei/web",
+      "epub": "../../media/books/god-soul-world_ei/god-soul-world_ei.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/growing-up-hindu/growing-up-hindu/web",
+      "info_url": "https://www.himalayanacademy.com/view/growing-up-hindu",
+      "base_url": "https://www.himalayanacademy.com/media/books/growing-up-hindu/web",
+      "epub": "../../media/books/growing-up-hindu/growing-up-hindu.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/growing-up-hindu_ei/growing-up-hindu_ei/web",
+      "info_url": "https://www.himalayanacademy.com/view/growing-up-hindu_ei",
+      "base_url": "https://www.himalayanacademy.com/media/books/growing-up-hindu_ei/web",
+      "epub": "../../media/books/growing-up-hindu_ei/growing-up-hindu_ei.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/guru-gita/guru-gita/web",
+      "info_url": "https://www.himalayanacademy.com/view/guru-gita",
+      "base_url": "https://www.himalayanacademy.com/media/books/guru-gita/web",
+      "epub": "../../media/books/guru-gita/guru-gita.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/guru-mantra/guru-mantra/web",
+      "info_url": "https://www.himalayanacademy.com/view/guru-mantra",
+      "base_url": "https://www.himalayanacademy.com/media/books/guru-mantra/web",
+      "epub": "../../media/books/guru-mantra/guru-mantra.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/guru-purnima_pt/guru-purnima_pt/web",
+      "info_url": "https://www.himalayanacademy.com/view/guru-purnima_pt",
+      "base_url": "https://www.himalayanacademy.com/media/books/guru-purnima_pt/web",
+      "epub": "../../media/books/guru-purnima_pt/guru-purnima_pt.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/gurudeva-ashtottara/gurudeva-ashtottara/web",
+      "info_url": "https://www.himalayanacademy.com/view/gurudeva-ashtottara",
+      "base_url": "https://www.himalayanacademy.com/media/books/gurudeva-ashtottara/web",
+      "epub": "../../media/books/gurudeva-ashtottara/gurudeva-ashtottara.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/gurudeva-weekly-calendar/gurudeva-weekly-calendar/web",
+      "info_url": "https://www.himalayanacademy.com/view/gurudeva-weekly-calendar",
+      "base_url": "https://www.himalayanacademy.com/media/books/gurudeva-weekly-calendar/web",
+      "epub": "../../media/books/gurudeva-weekly-calendar/gurudeva-weekly-calendar.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/gurudevas-1993-address-to-the-tamils-in-europe_ta/gurudevas-1993-address-to-the-tamils-in-europe_ta/web",
+      "info_url": "https://www.himalayanacademy.com/view/gurudevas-1993-address-to-the-tamils-in-europe_ta",
+      "base_url": "https://www.himalayanacademy.com/media/books/gurudevas-1993-address-to-the-tamils-in-europe_ta/web",
+      "epub": "../../media/books/gurudevas-1993-address-to-the-tamils-in-europe_ta/gurudevas-1993-address-to-the-tamils-in-europe_ta.epub"
+    },
+    {
+      "description": "Share in the mystical experiences and visions of the founder of Hinduism Today magazine, Satguru Sivaya Subramuniyaswami (Gurudeva), who lived in constant communion with our great devas and Gods--and with his own superconscious faculties.",
+      "output_folder": "../../media/books/gurudevas-spiritual-visions/gurudevas-spiritual-visions/web",
+      "info_url": "https://www.himalayanacademy.com/view/gurudevas-spiritual-visions",
+      "base_url": "https://www.himalayanacademy.com/media/books/gurudevas-spiritual-visions/web",
+      "epub": "../../media/books/gurudevas-spiritual-visions/gurudevas-spiritual-visions.epub"
+    },
+    {
+      "description": "Gurudeva was a spiritual giant who knew no challenge too great to meet, no obstacle too imposing to overcome, no problem too difficult to solve, no adversary too obstinate to win over, no hurt too deep to assuage, no detail too insignificant to address. In this book, the Monks of Kauai Aadheenam have put together a collection of Gurudeva's Spiritual Tools so that you have the practical methods necessary to overcome any challenge in your life.",
+      "output_folder": "../../media/books/gurudevas-toolbox/gurudevas-toolbox/web",
+      "info_url": "https://www.himalayanacademy.com/view/gurudevas-toolbox",
+      "base_url": "https://www.himalayanacademy.com/media/books/gurudevas-toolbox/web",
+      "epub": "../../media/books/gurudevas-toolbox/gurudevas-toolbox.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/gurudevas-werkzeugkasten_de/gurudevas-werkzeugkasten_de/web",
+      "info_url": "https://www.himalayanacademy.com/view/gurudevas-werkzeugkasten_de",
+      "base_url": "https://www.himalayanacademy.com/media/books/gurudevas-werkzeugkasten_de/web",
+      "epub": "../../media/books/gurudevas-werkzeugkasten_de/gurudevas-werkzeugkasten_de.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/hail-hindu-heroes_ei/hail-hindu-heroes_ei/web",
+      "info_url": "https://www.himalayanacademy.com/view/hail-hindu-heroes_ei",
+      "base_url": "https://www.himalayanacademy.com/media/books/hail-hindu-heroes_ei/web",
+      "epub": "../../media/books/hail-hindu-heroes_ei/hail-hindu-heroes_ei.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/hatha-yoga_ei/hatha-yoga_ei/web",
+      "info_url": "https://www.himalayanacademy.com/view/hatha-yoga_ei",
+      "base_url": "https://www.himalayanacademy.com/media/books/hatha-yoga_ei/web",
+      "epub": "../../media/books/hatha-yoga_ei/hatha-yoga_ei.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/healing-sacred-vows-and-trance-possession-ei/healing-sacred-vows-and-trance-possession-ei/web",
+      "info_url": "https://www.himalayanacademy.com/view/healing-sacred-vows-and-trance-possession-ei",
+      "base_url": "https://www.himalayanacademy.com/media/books/healing-sacred-vows-and-trance-possession-ei/web",
+      "epub": "../../media/books/healing-sacred-vows-and-trance-possession-ei/healing-sacred-vows-and-trance-possession-ei.epub"
+    },
+    {
+      "description": "The 5000-year-old Ayurvedic tradition is based on human spirituality and a life lived in wisdom. In this system, stress is placed on balanced forces of mind and body and on staying well, more than on how to recover from illness. In this series of over 100 columns which he wrote for Hinduism Today, Dr. Tandavan unfolds in simple, effective and totally practical ways India's Science of Life. His knowledge and experience in many dimensions will help anyone to live a healthier, happier, and holier life.",
+      "output_folder": "../../media/books/health-and-healing/health-and-healing/web",
+      "info_url": "https://www.himalayanacademy.com/view/health-and-healing",
+      "base_url": "https://www.himalayanacademy.com/media/books/health-and-healing/web",
+      "epub": "../../media/books/health-and-healing/health-and-healing.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/hindu-astrologys-lunar-mansions_ei/hindu-astrologys-lunar-mansions_ei/web",
+      "info_url": "https://www.himalayanacademy.com/view/hindu-astrologys-lunar-mansions_ei",
+      "base_url": "https://www.himalayanacademy.com/media/books/hindu-astrologys-lunar-mansions_ei/web",
+      "epub": "../../media/books/hindu-astrologys-lunar-mansions_ei/hindu-astrologys-lunar-mansions_ei.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/hindu-basics/hindu-basics/web",
+      "info_url": "https://www.himalayanacademy.com/view/hindu-basics",
+      "base_url": "https://www.himalayanacademy.com/media/books/hindu-basics/web",
+      "epub": "../../media/books/hindu-basics/hindu-basics.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/hindu-children-modern-stories_ei/hindu-children-modern-stories_ei/web",
+      "info_url": "https://www.himalayanacademy.com/view/hindu-children-modern-stories_ei",
+      "base_url": "https://www.himalayanacademy.com/media/books/hindu-children-modern-stories_ei/web",
+      "epub": "../../media/books/hindu-children-modern-stories_ei/hindu-children-modern-stories_ei.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/hindu-christian-point-counterpoint/hindu-christian-point-counterpoint/web",
+      "info_url": "https://www.himalayanacademy.com/view/hindu-christian-point-counterpoint",
+      "base_url": "https://www.himalayanacademy.com/media/books/hindu-christian-point-counterpoint/web",
+      "epub": "../../media/books/hindu-christian-point-counterpoint/hindu-christian-point-counterpoint.epub"
+    },
+    {
+      "description": "India was suppressed by centuries of Muslim and British foreign rule. But after independence in 1947, its founders succeeded in welding together the ancient land into a strong, united, modern nation. The Hindu religion survived intact and thrives today in the worlds largest democracy.",
+      "output_folder": "../../media/books/hindu-history-chapter-five/hindu-history-chapter-five/web",
+      "info_url": "https://www.himalayanacademy.com/view/hindu-history-chapter-five",
+      "base_url": "https://www.himalayanacademy.com/media/books/hindu-history-chapter-five/web",
+      "epub": "../../media/books/hindu-history-chapter-five/hindu-history-chapter-five.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/hindu-history-chapter-five-lesson-plans/hindu-history-chapter-five-lesson-plans/web",
+      "info_url": "https://www.himalayanacademy.com/view/hindu-history-chapter-five-lesson-plans",
+      "base_url": "https://www.himalayanacademy.com/media/books/hindu-history-chapter-five-lesson-plans/web",
+      "epub": "../../media/books/hindu-history-chapter-five-lesson-plans/hindu-history-chapter-five-lesson-plans.epub"
+    },
+    {
+      "description": "The British Crown took over direct control of India from the East India Company in 1858. Economic exploitation increased. A determined and mostly nonviolent freedom movement emerged and finally succeeded, resulting in the formation of modern India and Muslim Pakistan in 1947.",
+      "output_folder": "../../media/books/hindu-history-chapter-four/hindu-history-chapter-four/web",
+      "info_url": "https://www.himalayanacademy.com/view/hindu-history-chapter-four",
+      "base_url": "https://www.himalayanacademy.com/media/books/hindu-history-chapter-four/web",
+      "epub": "../../media/books/hindu-history-chapter-four/hindu-history-chapter-four.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/hindu-history-chapter-four-lesson-plans/hindu-history-chapter-four-lesson-plans/web",
+      "info_url": "https://www.himalayanacademy.com/view/hindu-history-chapter-four-lesson-plans",
+      "base_url": "https://www.himalayanacademy.com/media/books/hindu-history-chapter-four-lesson-plans/web",
+      "epub": "../../media/books/hindu-history-chapter-four-lesson-plans/hindu-history-chapter-four-lesson-plans.epub"
+    },
+    {
+      "description": "The largest civilization in the ancient world developed in the Indus Valley of India over 5,000 years ago. In the thousands of years that followed, India produced many great empires under which science, art and philosophy flourished. This rich history was predominantly guided by the Hindu religion, today the third largest in the world.",
+      "output_folder": "../../media/books/hindu-history-chapter-one/hindu-history-chapter-one/web",
+      "info_url": "https://www.himalayanacademy.com/view/hindu-history-chapter-one",
+      "base_url": "https://www.himalayanacademy.com/media/books/hindu-history-chapter-one/web",
+      "epub": "../../media/books/hindu-history-chapter-one/hindu-history-chapter-one.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/hindu-history-chapter-one-lesson-plans/hindu-history-chapter-one-lesson-plans/web",
+      "info_url": "https://www.himalayanacademy.com/view/hindu-history-chapter-one-lesson-plans",
+      "base_url": "https://www.himalayanacademy.com/media/books/hindu-history-chapter-one-lesson-plans/web",
+      "epub": "../../media/books/hindu-history-chapter-one-lesson-plans/hindu-history-chapter-one-lesson-plans.epub"
+    },
+    {
+      "description": "India responded to centuries of Muslim invasion and rule and later British colonization by both armed resistance and spiritual resolve. The country remained overwhelming Hindu despite foreign domination and religious oppression. India was one of the very few ancient societies to survive into modern times with its religion and social structure largely intact.",
+      "output_folder": "../../media/books/hindu-history-chapter-three/hindu-history-chapter-three/web",
+      "info_url": "https://www.himalayanacademy.com/view/hindu-history-chapter-three",
+      "base_url": "https://www.himalayanacademy.com/media/books/hindu-history-chapter-three/web",
+      "epub": "../../media/books/hindu-history-chapter-three/hindu-history-chapter-three.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/hindu-history-chapter-three-lesson-plans/hindu-history-chapter-three-lesson-plans/web",
+      "info_url": "https://www.himalayanacademy.com/view/hindu-history-chapter-three-lesson-plans",
+      "base_url": "https://www.himalayanacademy.com/media/books/hindu-history-chapter-three-lesson-plans/web",
+      "epub": "../../media/books/hindu-history-chapter-three-lesson-plans/hindu-history-chapter-three-lesson-plans.epub"
+    },
+    {
+      "description": "During these eight centuries, empires, religion, commerce, science, technology, literature and art flourished in India. In ways vitally important to Hindus to this day, the Hindu faith was advanced by temple building, the Bhakti Movement, holy texts and great philosophers, saints and sages.",
+      "output_folder": "../../media/books/hindu-history-chapter-two/hindu-history-chapter-two/web",
+      "info_url": "https://www.himalayanacademy.com/view/hindu-history-chapter-two",
+      "base_url": "https://www.himalayanacademy.com/media/books/hindu-history-chapter-two/web",
+      "epub": "../../media/books/hindu-history-chapter-two/hindu-history-chapter-two.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/hindu-history-chapter-two-lesson-plans/hindu-history-chapter-two-lesson-plans/web",
+      "info_url": "https://www.himalayanacademy.com/view/hindu-history-chapter-two-lesson-plans",
+      "base_url": "https://www.himalayanacademy.com/media/books/hindu-history-chapter-two-lesson-plans/web",
+      "epub": "../../media/books/hindu-history-chapter-two-lesson-plans/hindu-history-chapter-two-lesson-plans.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/hindu-hospitality_ei/hindu-hospitality_ei/web",
+      "info_url": "https://www.himalayanacademy.com/view/hindu-hospitality_ei",
+      "base_url": "https://www.himalayanacademy.com/media/books/hindu-hospitality_ei/web",
+      "epub": "../../media/books/hindu-hospitality_ei/hindu-hospitality_ei.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/hindu-lexicon-online/hindu-lexicon-online/web",
+      "info_url": "https://www.himalayanacademy.com/view/hindu-lexicon-online",
+      "base_url": "https://www.himalayanacademy.com/media/books/hindu-lexicon-online/web",
+      "epub": "../../media/books/hindu-lexicon-online/hindu-lexicon-online.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/hindu-primer_ei/hindu-primer_ei/web",
+      "info_url": "https://www.himalayanacademy.com/view/hindu-primer_ei",
+      "base_url": "https://www.himalayanacademy.com/media/books/hindu-primer_ei/web",
+      "epub": "../../media/books/hindu-primer_ei/hindu-primer_ei.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/hindu-scriptures_ei/hindu-scriptures_ei/web",
+      "info_url": "https://www.himalayanacademy.com/view/hindu-scriptures_ei",
+      "base_url": "https://www.himalayanacademy.com/media/books/hindu-scriptures_ei/web",
+      "epub": "../../media/books/hindu-scriptures_ei/hindu-scriptures_ei.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/hindu-wedding_ei/hindu-wedding_ei/web",
+      "info_url": "https://www.himalayanacademy.com/view/hindu-wedding_ei",
+      "base_url": "https://www.himalayanacademy.com/media/books/hindu-wedding_ei/web",
+      "epub": "../../media/books/hindu-wedding_ei/hindu-wedding_ei.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/hinduism-and-buddhism_ei/hinduism-and-buddhism_ei/web",
+      "info_url": "https://www.himalayanacademy.com/view/hinduism-and-buddhism_ei",
+      "base_url": "https://www.himalayanacademy.com/media/books/hinduism-and-buddhism_ei/web",
+      "epub": "../../media/books/hinduism-and-buddhism_ei/hinduism-and-buddhism_ei.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/hinduism-the-greatest-religion-in-the-world_ei/hinduism-the-greatest-religion-in-the-world_ei/web",
+      "info_url": "https://www.himalayanacademy.com/view/hinduism-the-greatest-religion-in-the-world_ei",
+      "base_url": "https://www.himalayanacademy.com/media/books/hinduism-the-greatest-religion-in-the-world_ei/web",
+      "epub": "../../media/books/hinduism-the-greatest-religion-in-the-world_ei/hinduism-the-greatest-religion-in-the-world_ei.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/hinduism-today-current-issue/hinduism-today-current-issue/web",
+      "info_url": "https://www.himalayanacademy.com/view/hinduism-today-current-issue",
+      "base_url": "https://www.himalayanacademy.com/media/books/hinduism-today-current-issue/web",
+      "epub": "../../media/books/hinduism-today-current-issue/hinduism-today-current-issue.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/hinduisma-agama-terunggul-di-dunia_ms/hinduisma-agama-terunggul-di-dunia_ms/web",
+      "info_url": "https://www.himalayanacademy.com/view/hinduisma-agama-terunggul-di-dunia_ms",
+      "base_url": "https://www.himalayanacademy.com/media/books/hinduisma-agama-terunggul-di-dunia_ms/web",
+      "epub": "../../media/books/hinduisma-agama-terunggul-di-dunia_ms/hinduisma-agama-terunggul-di-dunia_ms.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/hinduisms-nandinatha-sutras/hinduisms-nandinatha-sutras/web",
+      "info_url": "https://www.himalayanacademy.com/view/hinduisms-nandinatha-sutras",
+      "base_url": "https://www.himalayanacademy.com/media/books/hinduisms-nandinatha-sutras/web",
+      "epub": "../../media/books/hinduisms-nandinatha-sutras/hinduisms-nandinatha-sutras.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/hinduisms-nine-beliefs_hi/hinduisms-nine-beliefs_hi/web",
+      "info_url": "https://www.himalayanacademy.com/view/hinduisms-nine-beliefs_hi",
+      "base_url": "https://www.himalayanacademy.com/media/books/hinduisms-nine-beliefs_hi/web",
+      "epub": "../../media/books/hinduisms-nine-beliefs_hi/hinduisms-nine-beliefs_hi.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/hinduistischer-verhaltenscode_de/hinduistischer-verhaltenscode_de/web",
+      "info_url": "https://www.himalayanacademy.com/view/hinduistischer-verhaltenscode_de",
+      "base_url": "https://www.himalayanacademy.com/media/books/hinduistischer-verhaltenscode_de/web",
+      "epub": "../../media/books/hinduistischer-verhaltenscode_de/hinduistischer-verhaltenscode_de.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/holy-festivals_ei/holy-festivals_ei/web",
+      "info_url": "https://www.himalayanacademy.com/view/holy-festivals_ei",
+      "base_url": "https://www.himalayanacademy.com/media/books/holy-festivals_ei/web",
+      "epub": "../../media/books/holy-festivals_ei/holy-festivals_ei.epub"
+    },
+    {
+      "description": "A religious covenant between a sannyasin&mdash;one who has renounced the world in service to God Siva&mdash;and the divine beings of all three worlds. ",
+      "output_folder": "../../media/books/holy-orders-of-sannyas/holy-orders-of-sannyas/web",
+      "info_url": "https://www.himalayanacademy.com/view/holy-orders-of-sannyas",
+      "base_url": "https://www.himalayanacademy.com/media/books/holy-orders-of-sannyas/web",
+      "epub": "../../media/books/holy-orders-of-sannyas/holy-orders-of-sannyas.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/home-festivals_ei/home-festivals_ei/web",
+      "info_url": "https://www.himalayanacademy.com/view/home-festivals_ei",
+      "base_url": "https://www.himalayanacademy.com/media/books/home-festivals_ei/web",
+      "epub": "../../media/books/home-festivals_ei/home-festivals_ei.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/home-puja_ei/home-puja_ei/web",
+      "info_url": "https://www.himalayanacademy.com/view/home-puja_ei",
+      "base_url": "https://www.himalayanacademy.com/media/books/home-puja_ei/web",
+      "epub": "../../media/books/home-puja_ei/home-puja_ei.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/honoring-the-arts-of-homemaking_ei/honoring-the-arts-of-homemaking_ei/web",
+      "info_url": "https://www.himalayanacademy.com/view/honoring-the-arts-of-homemaking_ei",
+      "base_url": "https://www.himalayanacademy.com/media/books/honoring-the-arts-of-homemaking_ei/web",
+      "epub": "../../media/books/honoring-the-arts-of-homemaking_ei/honoring-the-arts-of-homemaking_ei.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/honoring-the-spirit-of-community_ei/honoring-the-spirit-of-community_ei/web",
+      "info_url": "https://www.himalayanacademy.com/view/honoring-the-spirit-of-community_ei",
+      "base_url": "https://www.himalayanacademy.com/media/books/honoring-the-spirit-of-community_ei/web",
+      "epub": "../../media/books/honoring-the-spirit-of-community_ei/honoring-the-spirit-of-community_ei.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/how-the-major-religions-view-god_ei/how-the-major-religions-view-god_ei/web",
+      "info_url": "https://www.himalayanacademy.com/view/how-the-major-religions-view-god_ei",
+      "base_url": "https://www.himalayanacademy.com/media/books/how-the-major-religions-view-god_ei/web",
+      "epub": "../../media/books/how-the-major-religions-view-god_ei/how-the-major-religions-view-god_ei.epub"
+    },
+    {
+      "description": "A history-making manual, interreligious study and names list, with stories by Westerners who entered Hinduism and Hindus who deepened their faith.",
+      "output_folder": "../../media/books/how-to-become-a-hindu/how-to-become-a-hindu/web",
+      "info_url": "https://www.himalayanacademy.com/view/how-to-become-a-hindu",
+      "base_url": "https://www.himalayanacademy.com/media/books/how-to-become-a-hindu/web",
+      "epub": "../../media/books/how-to-become-a-hindu/how-to-become-a-hindu.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/how-to-ease-karma_ei/how-to-ease-karma_ei/web",
+      "info_url": "https://www.himalayanacademy.com/view/how-to-ease-karma_ei",
+      "base_url": "https://www.himalayanacademy.com/media/books/how-to-ease-karma_ei/web",
+      "epub": "../../media/books/how-to-ease-karma_ei/how-to-ease-karma_ei.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/how-to-win-an-argument-with-a-meateater_hu/how-to-win-an-argument-with-a-meateater_hu/web",
+      "info_url": "https://www.himalayanacademy.com/view/how-to-win-an-argument-with-a-meateater_hu",
+      "base_url": "https://www.himalayanacademy.com/media/books/how-to-win-an-argument-with-a-meateater_hu/web",
+      "epub": "../../media/books/how-to-win-an-argument-with-a-meateater_hu/how-to-win-an-argument-with-a-meateater_hu.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/humanities-diverse-faiths_ei/humanities-diverse-faiths_ei/web",
+      "info_url": "https://www.himalayanacademy.com/view/humanities-diverse-faiths_ei",
+      "base_url": "https://www.himalayanacademy.com/media/books/humanities-diverse-faiths_ei/web",
+      "epub": "../../media/books/humanities-diverse-faiths_ei/humanities-diverse-faiths_ei.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/il-se-dio_it/il-se-dio_it/web",
+      "info_url": "https://www.himalayanacademy.com/view/il-se-dio_it",
+      "base_url": "https://www.himalayanacademy.com/media/books/il-se-dio_it/web",
+      "epub": "../../media/books/il-se-dio_it/il-se-dio_it.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/jazn-the-self-god_pl/jazn-the-self-god_pl/web",
+      "info_url": "https://www.himalayanacademy.com/view/jazn-the-self-god_pl",
+      "base_url": "https://www.himalayanacademy.com/media/books/jazn-the-self-god_pl/web",
+      "epub": "../../media/books/jazn-the-self-god_pl/jazn-the-self-god_pl.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/kadavul-hindu-temple/kadavul-hindu-temple/web",
+      "info_url": "https://www.himalayanacademy.com/view/kadavul-hindu-temple",
+      "base_url": "https://www.himalayanacademy.com/media/books/kadavul-hindu-temple/web",
+      "epub": "../../media/books/kadavul-hindu-temple/kadavul-hindu-temple.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/kamika-agama-purva-pada-part-1/kamika-agama-purva-pada-part-1/web",
+      "info_url": "https://www.himalayanacademy.com/view/kamika-agama-purva-pada-part-1",
+      "base_url": "https://www.himalayanacademy.com/media/books/kamika-agama-purva-pada-part-1/web",
+      "epub": "../../media/books/kamika-agama-purva-pada-part-1/kamika-agama-purva-pada-part-1.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/kamika-agama-uttara-pada-part-2/kamika-agama-uttara-pada-part-2/web",
+      "info_url": "https://www.himalayanacademy.com/view/kamika-agama-uttara-pada-part-2",
+      "base_url": "https://www.himalayanacademy.com/media/books/kamika-agama-uttara-pada-part-2/web",
+      "epub": "../../media/books/kamika-agama-uttara-pada-part-2/kamika-agama-uttara-pada-part-2.epub"
+    },
+    {
+      "description": "<i>Kamikagama</i> is one of the longest Agamas followed by most of the temples in South India. ",
+      "output_folder": "../../media/books/kamika-agama_grantha/kamika-agama_grantha/web",
+      "info_url": "https://www.himalayanacademy.com/view/kamika-agama_grantha",
+      "base_url": "https://www.himalayanacademy.com/media/books/kamika-agama_grantha/web",
+      "epub": "../../media/books/kamika-agama_grantha/kamika-agama_grantha.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/karana-agama-grantha/karana-agama-grantha/web",
+      "info_url": "https://www.himalayanacademy.com/view/karana-agama-grantha",
+      "base_url": "https://www.himalayanacademy.com/media/books/karana-agama-grantha/web",
+      "epub": "../../media/books/karana-agama-grantha/karana-agama-grantha.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/karma-and-reincarnation/karma-and-reincarnation/web",
+      "info_url": "https://www.himalayanacademy.com/view/karma-and-reincarnation",
+      "base_url": "https://www.himalayanacademy.com/media/books/karma-and-reincarnation/web",
+      "epub": "../../media/books/karma-and-reincarnation/karma-and-reincarnation.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/karma-management_ei/karma-management_ei/web",
+      "info_url": "https://www.himalayanacademy.com/view/karma-management_ei",
+      "base_url": "https://www.himalayanacademy.com/media/books/karma-management_ei/web",
+      "epub": "../../media/books/karma-management_ei/karma-management_ei.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/karma-reincarnation-vivekananda_ei/karma-reincarnation-vivekananda_ei/web",
+      "info_url": "https://www.himalayanacademy.com/view/karma-reincarnation-vivekananda_ei",
+      "base_url": "https://www.himalayanacademy.com/media/books/karma-reincarnation-vivekananda_ei/web",
+      "epub": "../../media/books/karma-reincarnation-vivekananda_ei/karma-reincarnation-vivekananda_ei.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/kauais-hindu-monastery-of-america_ta/kauais-hindu-monastery-of-america_ta/web",
+      "info_url": "https://www.himalayanacademy.com/view/kauais-hindu-monastery-of-america_ta",
+      "base_url": "https://www.himalayanacademy.com/media/books/kauais-hindu-monastery-of-america_ta/web",
+      "epub": "../../media/books/kauais-hindu-monastery-of-america_ta/kauais-hindu-monastery-of-america_ta.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/kirana-agama-english-translation/kirana-agama-english-translation/web",
+      "info_url": "https://www.himalayanacademy.com/view/kirana-agama-english-translation",
+      "base_url": "https://www.himalayanacademy.com/media/books/kirana-agama-english-translation/web",
+      "epub": "../../media/books/kirana-agama-english-translation/kirana-agama-english-translation.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/know-thyself_ei/know-thyself_ei/web",
+      "info_url": "https://www.himalayanacademy.com/view/know-thyself_ei",
+      "base_url": "https://www.himalayanacademy.com/media/books/know-thyself_ei/web",
+      "epub": "../../media/books/know-thyself_ei/know-thyself_ei.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/kularnava-tantra/kularnava-tantra/web",
+      "info_url": "https://www.himalayanacademy.com/view/kularnava-tantra",
+      "base_url": "https://www.himalayanacademy.com/media/books/kularnava-tantra/web",
+      "epub": "../../media/books/kularnava-tantra/kularnava-tantra.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/kumbha-mela_ei/kumbha-mela_ei/web",
+      "info_url": "https://www.himalayanacademy.com/view/kumbha-mela_ei",
+      "base_url": "https://www.himalayanacademy.com/media/books/kumbha-mela_ei/web",
+      "epub": "../../media/books/kumbha-mela_ei/kumbha-mela_ei.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/largent-de-dieu_fr/largent-de-dieu_fr/web",
+      "info_url": "https://www.himalayanacademy.com/view/largent-de-dieu_fr",
+      "base_url": "https://www.himalayanacademy.com/media/books/largent-de-dieu_fr/web",
+      "epub": "../../media/books/largent-de-dieu_fr/largent-de-dieu_fr.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/le-catechisme-hindou-sivaite_fr/le-catechisme-hindou-sivaite_fr/web",
+      "info_url": "https://www.himalayanacademy.com/view/le-catechisme-hindou-sivaite_fr",
+      "base_url": "https://www.himalayanacademy.com/media/books/le-catechisme-hindou-sivaite_fr/web",
+      "epub": "../../media/books/le-catechisme-hindou-sivaite_fr/le-catechisme-hindou-sivaite_fr.epub"
+    },
+    {
+      "description": "An illustrated, clairvoyant revelation of man's untold journey to Earth from the Pleiades millions of years ago, and the struggles faced through the eras as souls matured into their ultimate destiny and Divinity",
+      "output_folder": "../../media/books/lemurian-scrolls/lemurian-scrolls/web",
+      "info_url": "https://www.himalayanacademy.com/view/lemurian-scrolls",
+      "base_url": "https://www.himalayanacademy.com/media/books/lemurian-scrolls/web",
+      "epub": "../../media/books/lemurian-scrolls/lemurian-scrolls.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/life-after-death_ei/life-after-death_ei/web",
+      "info_url": "https://www.himalayanacademy.com/view/life-after-death_ei",
+      "base_url": "https://www.himalayanacademy.com/media/books/life-after-death_ei/web",
+      "epub": "../../media/books/life-after-death_ei/life-after-death_ei.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/life-skills-for-hindu-teens/life-skills-for-hindu-teens/web",
+      "info_url": "https://www.himalayanacademy.com/view/life-skills-for-hindu-teens",
+      "base_url": "https://www.himalayanacademy.com/media/books/life-skills-for-hindu-teens/web",
+      "epub": "../../media/books/life-skills-for-hindu-teens/life-skills-for-hindu-teens.epub"
+    },
+    {
+      "description": "365 daily lessons based on acient Vedic laws, disclosing how to approach family, money, relationships, technology, food, worship, yoga and karma to live a truly spiritual life. ",
+      "output_folder": "../../media/books/living-with-siva/living-with-siva/web",
+      "info_url": "https://www.himalayanacademy.com/view/living-with-siva",
+      "base_url": "https://www.himalayanacademy.com/media/books/living-with-siva/web",
+      "epub": "../../media/books/living-with-siva/living-with-siva.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/los-upanishads_es/los-upanishads_es/web",
+      "info_url": "https://www.himalayanacademy.com/view/los-upanishads_es",
+      "base_url": "https://www.himalayanacademy.com/media/books/los-upanishads_es/web",
+      "epub": "../../media/books/los-upanishads_es/los-upanishads_es.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/love-of-god-is-vedanta_ei/love-of-god-is-vedanta_ei/web",
+      "info_url": "https://www.himalayanacademy.com/view/love-of-god-is-vedanta_ei",
+      "base_url": "https://www.himalayanacademy.com/media/books/love-of-god-is-vedanta_ei/web",
+      "epub": "../../media/books/love-of-god-is-vedanta_ei/love-of-god-is-vedanta_ei.epub"
+    },
+    {
+      "description": "<i>Loving Ganesha</i> unfolds a rich, readable potpourri that will immediately transport you into the psychic reality of this cosmic soul being. Children's prayers, mantras, pujas, symbols, metaphysics, soul qualities, Aum science, Lord of karma, recipes and more is presented in the most complete digest of Lord Ganesha ever produced. Fully illustrated and indexed.",
+      "output_folder": "../../media/books/loving-ganesha/loving-ganesha/web",
+      "info_url": "https://www.himalayanacademy.com/view/loving-ganesha",
+      "base_url": "https://www.himalayanacademy.com/media/books/loving-ganesha/web",
+      "epub": "../../media/books/loving-ganesha/loving-ganesha.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/mantra-pushpam/mantra-pushpam/web",
+      "info_url": "https://www.himalayanacademy.com/view/mantra-pushpam",
+      "base_url": "https://www.himalayanacademy.com/media/books/mantra-pushpam/web",
+      "epub": "../../media/books/mantra-pushpam/mantra-pushpam.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/mantra-yoga_ei/mantra-yoga_ei/web",
+      "info_url": "https://www.himalayanacademy.com/view/mantra-yoga_ei",
+      "base_url": "https://www.himalayanacademy.com/media/books/mantra-yoga_ei/web",
+      "epub": "../../media/books/mantra-yoga_ei/mantra-yoga_ei.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/matanga-agama-vidya-pada_v2/matanga-agama-vidya-pada_v2/web",
+      "info_url": "https://www.himalayanacademy.com/view/matanga-agama-vidya-pada_v2",
+      "base_url": "https://www.himalayanacademy.com/media/books/matanga-agama-vidya-pada_v2/web",
+      "epub": "../../media/books/matanga-agama-vidya-pada_v2/matanga-agama-vidya-pada_v2.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/mauritius-spiritual-park/mauritius-spiritual-park/web",
+      "info_url": "https://www.himalayanacademy.com/view/mauritius-spiritual-park",
+      "base_url": "https://www.himalayanacademy.com/media/books/mauritius-spiritual-park/web",
+      "epub": "../../media/books/mauritius-spiritual-park/mauritius-spiritual-park.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/medical-ethics_ei/medical-ethics_ei/web",
+      "info_url": "https://www.himalayanacademy.com/view/medical-ethics_ei",
+      "base_url": "https://www.himalayanacademy.com/media/books/medical-ethics_ei/web",
+      "epub": "../../media/books/medical-ethics_ei/medical-ethics_ei.epub"
+    },
+    {
+      "description": "365 enlightenment lessons from a mystical master, revealing the depths of raja yoga, the clear white light, the states of mind and the ultimate spiritual destiny of every seeker",
+      "output_folder": "../../media/books/merging-with-siva/merging-with-siva/web",
+      "info_url": "https://www.himalayanacademy.com/view/merging-with-siva",
+      "base_url": "https://www.himalayanacademy.com/media/books/merging-with-siva/web",
+      "epub": "../../media/books/merging-with-siva/merging-with-siva.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/merging-with-siva_ru/merging-with-siva_ru/web",
+      "info_url": "https://www.himalayanacademy.com/view/merging-with-siva_ru",
+      "base_url": "https://www.himalayanacademy.com/media/books/merging-with-siva_ru/web",
+      "epub": "../../media/books/merging-with-siva_ru/merging-with-siva_ru.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/modern-matchmaking_ei/modern-matchmaking_ei/web",
+      "info_url": "https://www.himalayanacademy.com/view/modern-matchmaking_ei",
+      "base_url": "https://www.himalayanacademy.com/media/books/modern-matchmaking_ei/web",
+      "epub": "../../media/books/modern-matchmaking_ei/modern-matchmaking_ei.epub"
+    },
+    {
+      "description": "South Indian ashrams serve the finest cruelty-free meals enjoyed anywhere, and Kauai's Hindu Monastery carries on the 6,000-year-old\ntradition. They believe good food is humankind's best medicine, and there is an energy in their culinary contemplations, called prana, that\nnourishes body and soul alike. Now the monks have shared their secret\ncollection of recipes, gathered over the years and perfected in the\nIslands made famous by, wouldn't you know, Captain Cook!",
+      "output_folder": "../../media/books/monks-cookbook/monks-cookbook/web",
+      "info_url": "https://www.himalayanacademy.com/view/monks-cookbook",
+      "base_url": "https://www.himalayanacademy.com/media/books/monks-cookbook/web",
+      "epub": "../../media/books/monks-cookbook/monks-cookbook.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/mrgendra-agama-vidya-pada/mrgendra-agama-vidya-pada/web",
+      "info_url": "https://www.himalayanacademy.com/view/mrgendra-agama-vidya-pada",
+      "base_url": "https://www.himalayanacademy.com/media/books/mrgendra-agama-vidya-pada/web",
+      "epub": "../../media/books/mrgendra-agama-vidya-pada/mrgendra-agama-vidya-pada.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/my-friend-lord-ganesha_ei/my-friend-lord-ganesha_ei/web",
+      "info_url": "https://www.himalayanacademy.com/view/my-friend-lord-ganesha_ei",
+      "base_url": "https://www.himalayanacademy.com/media/books/my-friend-lord-ganesha_ei/web",
+      "epub": "../../media/books/my-friend-lord-ganesha_ei/my-friend-lord-ganesha_ei.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/nandinatha-sutras_ta/nandinatha-sutras_ta/web",
+      "info_url": "https://www.himalayanacademy.com/view/nandinatha-sutras_ta",
+      "base_url": "https://www.himalayanacademy.com/media/books/nandinatha-sutras_ta/web",
+      "epub": "../../media/books/nandinatha-sutras_ta/nandinatha-sutras_ta.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/natchintanai-song-book/natchintanai-song-book/web",
+      "info_url": "https://www.himalayanacademy.com/view/natchintanai-song-book",
+      "base_url": "https://www.himalayanacademy.com/media/books/natchintanai-song-book/web",
+      "epub": "../../media/books/natchintanai-song-book/natchintanai-song-book.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/nove-crencas-do-hinduismo_pt/nove-crencas-do-hinduismo_pt/web",
+      "info_url": "https://www.himalayanacademy.com/view/nove-crencas-do-hinduismo_pt",
+      "base_url": "https://www.himalayanacademy.com/media/books/nove-crencas-do-hinduismo_pt/web",
+      "epub": "../../media/books/nove-crencas-do-hinduismo_pt/nove-crencas-do-hinduismo_pt.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/our-sacred-earth_ei/our-sacred-earth_ei/web",
+      "info_url": "https://www.himalayanacademy.com/view/our-sacred-earth_ei",
+      "base_url": "https://www.himalayanacademy.com/media/books/our-sacred-earth_ei/web",
+      "epub": "../../media/books/our-sacred-earth_ei/our-sacred-earth_ei.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/our-subtle-energy-highway_ei/our-subtle-energy-highway_ei/web",
+      "info_url": "https://www.himalayanacademy.com/view/our-subtle-energy-highway_ei",
+      "base_url": "https://www.himalayanacademy.com/media/books/our-subtle-energy-highway_ei/web",
+      "epub": "../../media/books/our-subtle-energy-highway_ei/our-subtle-energy-highway_ei.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/pancha-ganapati/pancha-ganapati/web",
+      "info_url": "https://www.himalayanacademy.com/view/pancha-ganapati",
+      "base_url": "https://www.himalayanacademy.com/media/books/pancha-ganapati/web",
+      "epub": "../../media/books/pancha-ganapati/pancha-ganapati.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/parenting-with-love_ei/parenting-with-love_ei/web",
+      "info_url": "https://www.himalayanacademy.com/view/parenting-with-love_ei",
+      "base_url": "https://www.himalayanacademy.com/media/books/parenting-with-love_ei/web",
+      "epub": "../../media/books/parenting-with-love_ei/parenting-with-love_ei.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/path-to-siva/path-to-siva/web",
+      "info_url": "https://www.himalayanacademy.com/view/path-to-siva",
+      "base_url": "https://www.himalayanacademy.com/media/books/path-to-siva/web",
+      "epub": "../../media/books/path-to-siva/path-to-siva.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/pauskara-agama-vidya-pada_v2/pauskara-agama-vidya-pada_v2/web",
+      "info_url": "https://www.himalayanacademy.com/view/pauskara-agama-vidya-pada_v2",
+      "base_url": "https://www.himalayanacademy.com/media/books/pauskara-agama-vidya-pada_v2/web",
+      "epub": "../../media/books/pauskara-agama-vidya-pada_v2/pauskara-agama-vidya-pada_v2.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/raising-children-as-good-hindus_ei/raising-children-as-good-hindus_ei/web",
+      "info_url": "https://www.himalayanacademy.com/view/raising-children-as-good-hindus_ei",
+      "base_url": "https://www.himalayanacademy.com/media/books/raising-children-as-good-hindus_ei/web",
+      "epub": "../../media/books/raising-children-as-good-hindus_ei/raising-children-as-good-hindus_ei.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/raurava-agama-vidya-pada/raurava-agama-vidya-pada/web",
+      "info_url": "https://www.himalayanacademy.com/view/raurava-agama-vidya-pada",
+      "base_url": "https://www.himalayanacademy.com/media/books/raurava-agama-vidya-pada/web",
+      "epub": "../../media/books/raurava-agama-vidya-pada/raurava-agama-vidya-pada.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/reflections/reflections/web",
+      "info_url": "https://www.himalayanacademy.com/view/reflections",
+      "base_url": "https://www.himalayanacademy.com/media/books/reflections/web",
+      "epub": "../../media/books/reflections/reflections.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/rites-of-passage_ei/rites-of-passage_ei/web",
+      "info_url": "https://www.himalayanacademy.com/view/rites-of-passage_ei",
+      "base_url": "https://www.himalayanacademy.com/media/books/rites-of-passage_ei/web",
+      "epub": "../../media/books/rites-of-passage_ei/rites-of-passage_ei.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/sacred-pilgrimage_ei/sacred-pilgrimage_ei/web",
+      "info_url": "https://www.himalayanacademy.com/view/sacred-pilgrimage_ei",
+      "base_url": "https://www.himalayanacademy.com/media/books/sacred-pilgrimage_ei/web",
+      "epub": "../../media/books/sacred-pilgrimage_ei/sacred-pilgrimage_ei.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/sacred-pledge/sacred-pledge/web",
+      "info_url": "https://www.himalayanacademy.com/view/sacred-pledge",
+      "base_url": "https://www.himalayanacademy.com/media/books/sacred-pledge/web",
+      "epub": "../../media/books/sacred-pledge/sacred-pledge.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/sacred-symbols_ei/sacred-symbols_ei/web",
+      "info_url": "https://www.himalayanacademy.com/view/sacred-symbols_ei",
+      "base_url": "https://www.himalayanacademy.com/media/books/sacred-symbols_ei/web",
+      "epub": "../../media/books/sacred-symbols_ei/sacred-symbols_ei.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/sacred-vows/sacred-vows/web",
+      "info_url": "https://www.himalayanacademy.com/view/sacred-vows",
+      "base_url": "https://www.himalayanacademy.com/media/books/sacred-vows/web",
+      "epub": "../../media/books/sacred-vows/sacred-vows.epub"
+    },
+    {
+      "description": "Get ready for your pilgrimage. Traditionally Hindus will prepare themselves at home before going to see God at a temple far away. Read this guide for practical practices to purify and align your body, heart and mind with your intention to cut loose from your regular life and have a vision of the Divine at Kauai Aadheenam.",
+      "output_folder": "../../media/books/sadhana-guide-for-pilgrims/sadhana-guide-for-pilgrims/web",
+      "info_url": "https://www.himalayanacademy.com/view/sadhana-guide-for-pilgrims",
+      "base_url": "https://www.himalayanacademy.com/media/books/sadhana-guide-for-pilgrims/web",
+      "epub": "../../media/books/sadhana-guide-for-pilgrims/sadhana-guide-for-pilgrims.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/sadhana_ei/sadhana_ei/web",
+      "info_url": "https://www.himalayanacademy.com/view/sadhana_ei",
+      "base_url": "https://www.himalayanacademy.com/media/books/sadhana_ei/web",
+      "epub": "../../media/books/sadhana_ei/sadhana_ei.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/saiva-booshanam_sa-ta/saiva-booshanam_sa-ta/web",
+      "info_url": "https://www.himalayanacademy.com/view/saiva-booshanam_sa-ta",
+      "base_url": "https://www.himalayanacademy.com/media/books/saiva-booshanam_sa-ta/web",
+      "epub": "../../media/books/saiva-booshanam_sa-ta/saiva-booshanam_sa-ta.epub"
+    },
+    {
+      "description": "A dossier setting forth the theology, doctrines, customs, policies and plans by which members and institutions of Saiva Siddhanta Church are guided and governed in loving service to our Supreme God Siva.",
+      "output_folder": "../../media/books/saiva-dharma-shastras/saiva-dharma-shastras/web",
+      "info_url": "https://www.himalayanacademy.com/view/saiva-dharma-shastras",
+      "base_url": "https://www.himalayanacademy.com/media/books/saiva-dharma-shastras/web",
+      "epub": "../../media/books/saiva-dharma-shastras/saiva-dharma-shastras.epub"
+    },
+    {
+      "description": "A scanned version of the <i>Saiva Kala Viveka</i>, Systematic Inquiry on Timing of Temple Rituals, provided to us by Dr. Sabharathnam S. Pattusamy of Chennai, India. It is in grantha script. We do not know the publisher or date of this printed manuscript. ",
+      "output_folder": "../../media/books/saiva-kala-viveka_grantha/saiva-kala-viveka_grantha/web",
+      "info_url": "https://www.himalayanacademy.com/view/saiva-kala-viveka_grantha",
+      "base_url": "https://www.himalayanacademy.com/media/books/saiva-kala-viveka_grantha/web",
+      "epub": "../../media/books/saiva-kala-viveka_grantha/saiva-kala-viveka_grantha.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/saivite-creed-in-gujarati/saivite-creed-in-gujarati/web",
+      "info_url": "https://www.himalayanacademy.com/view/saivite-creed-in-gujarati",
+      "base_url": "https://www.himalayanacademy.com/media/books/saivite-creed-in-gujarati/web",
+      "epub": "../../media/books/saivite-creed-in-gujarati/saivite-creed-in-gujarati.epub"
+    },
+    {
+      "description": "Fourth in the series of children's books for Saivite Hindus, based on the holy Vedas, the world's oldest scripture, for children 8-10 years of age. It is an authentic resource for parents and teachers seeking to educate children in Hindu beliefs, ethics, culture and customs. The \"why\" of each belief and practice is explained, giving children unique insight into their religion. 172 pages, in color, translated into Tamil, Malay and French.\n",
+      "output_folder": "../../media/books/saivite-hindu-religion-book-four/saivite-hindu-religion-book-four/web",
+      "info_url": "https://www.himalayanacademy.com/view/saivite-hindu-religion-book-four",
+      "base_url": "https://www.himalayanacademy.com/media/books/saivite-hindu-religion-book-four/web",
+      "epub": "../../media/books/saivite-hindu-religion-book-four/saivite-hindu-religion-book-four.epub"
+    },
+    {
+      "description": "What every parent needs: intelligent, non-violent, traditional texts for their kidsan illustrated, children's series called Saivite Hindu Religion, on philosophy, culture and family life. Book One is for 5 to 7 year olds and is in English, Tamil and Hindi. This makes a great coloring book and is also an excellent way to teach Tamil or Hindi to children. The book includes resources, a teacher's guide and interactive fun games for the kids.",
+      "output_folder": "../../media/books/saivite-hindu-religion-book-one/saivite-hindu-religion-book-one/web",
+      "info_url": "https://www.himalayanacademy.com/view/saivite-hindu-religion-book-one",
+      "base_url": "https://www.himalayanacademy.com/media/books/saivite-hindu-religion-book-one/web",
+      "epub": "../../media/books/saivite-hindu-religion-book-one/saivite-hindu-religion-book-one.epub"
+    },
+    {
+      "description": "This is the third in a series of children's books for Saivite Hindus. It is an eighty six page illustrated children's course teaching the love and worship of God Siva in the context of traditional Hindu philosophy, culture, values and family life. In four languages, English, French, Tamil and Malay, teachers and parents can teach children the basic beliefs of Hinduism from a Saivite perspective. Topics include reincarnation, temple worship, God and the Gods, the purpose of wearing vibuthi, karma, meditation, dharma and much more. Designed for children who have completed Book One and Book Two classes, Book Three can also be taught to kids upto age ten. And it is a great way to teach children other languages.",
+      "output_folder": "../../media/books/saivite-hindu-religion-book-three/saivite-hindu-religion-book-three/web",
+      "info_url": "https://www.himalayanacademy.com/view/saivite-hindu-religion-book-three",
+      "base_url": "https://www.himalayanacademy.com/media/books/saivite-hindu-religion-book-three/web",
+      "epub": "../../media/books/saivite-hindu-religion-book-three/saivite-hindu-religion-book-three.epub"
+    },
+    {
+      "description": "What every parent needs: intelligent, non-violent, traditional texts for their kids?an illustrated, children's series called Saivite Hindu Religion, on philosophy, culture and family life. Book Two is for 6 to 8 year olds and is in English, Tamil and Malay. This makes a great coloring book and is also an excellent way to teach Tamil or Malay to children. The book includes resources, a teacher's guide and interactive fun games for the kids.",
+      "output_folder": "../../media/books/saivite-hindu-religion-book-two/saivite-hindu-religion-book-two/web",
+      "info_url": "https://www.himalayanacademy.com/view/saivite-hindu-religion-book-two",
+      "base_url": "https://www.himalayanacademy.com/media/books/saivite-hindu-religion-book-two/web",
+      "epub": "../../media/books/saivite-hindu-religion-book-two/saivite-hindu-religion-book-two.epub"
+    },
+    {
+      "description": "Forty-nine lessons on the power of celibacy for youth. Brahmacharya is the traditional virtue of celibacy, remaining chaste until marriage, for a specified period of time, or for life. It also includes restraining the base instincts of anger, jealousy, greed, selfishness, etc. ",
+      "output_folder": "../../media/books/saivite-virtue/saivite-virtue/web",
+      "info_url": "https://www.himalayanacademy.com/view/saivite-virtue",
+      "base_url": "https://www.himalayanacademy.com/media/books/saivite-virtue/web",
+      "epub": "../../media/books/saivite-virtue/saivite-virtue.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/sarvagnanotaraagam/sarvagnanotaraagam/web",
+      "info_url": "https://www.himalayanacademy.com/view/sarvagnanotaraagam",
+      "base_url": "https://www.himalayanacademy.com/media/books/sarvagnanotaraagam/web",
+      "epub": "../../media/books/sarvagnanotaraagam/sarvagnanotaraagam.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/sarvajnanottara-agama-yoga-pada/sarvajnanottara-agama-yoga-pada/web",
+      "info_url": "https://www.himalayanacademy.com/view/sarvajnanottara-agama-yoga-pada",
+      "base_url": "https://www.himalayanacademy.com/media/books/sarvajnanottara-agama-yoga-pada/web",
+      "epub": "../../media/books/sarvajnanottara-agama-yoga-pada/sarvajnanottara-agama-yoga-pada.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/self-and-samadhi/self-and-samadhi/web",
+      "info_url": "https://www.himalayanacademy.com/view/self-and-samadhi",
+      "base_url": "https://www.himalayanacademy.com/media/books/self-and-samadhi/web",
+      "epub": "../../media/books/self-and-samadhi/self-and-samadhi.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/shanti-mantra/shanti-mantra/web",
+      "info_url": "https://www.himalayanacademy.com/view/shanti-mantra",
+      "base_url": "https://www.himalayanacademy.com/media/books/shanti-mantra/web",
+      "epub": "../../media/books/shanti-mantra/shanti-mantra.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/siddantha-prakashika_sa-en/siddantha-prakashika_sa-en/web",
+      "info_url": "https://www.himalayanacademy.com/view/siddantha-prakashika_sa-en",
+      "base_url": "https://www.himalayanacademy.com/media/books/siddantha-prakashika_sa-en/web",
+      "epub": "../../media/books/siddantha-prakashika_sa-en/siddantha-prakashika_sa-en.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/siddhanta-course-1977/siddhanta-course-1977/web",
+      "info_url": "https://www.himalayanacademy.com/view/siddhanta-course-1977",
+      "base_url": "https://www.himalayanacademy.com/media/books/siddhanta-course-1977/web",
+      "epub": "../../media/books/siddhanta-course-1977/siddhanta-course-1977.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/silence-is-golden_ei/silence-is-golden_ei/web",
+      "info_url": "https://www.himalayanacademy.com/view/silence-is-golden_ei",
+      "base_url": "https://www.himalayanacademy.com/media/books/silence-is-golden_ei/web",
+      "epub": "../../media/books/silence-is-golden_ei/silence-is-golden_ei.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/siva-mahothsava-sangraha/siva-mahothsava-sangraha/web",
+      "info_url": "https://www.himalayanacademy.com/view/siva-mahothsava-sangraha",
+      "base_url": "https://www.himalayanacademy.com/media/books/siva-mahothsava-sangraha/web",
+      "epub": "../../media/books/siva-mahothsava-sangraha/siva-mahothsava-sangraha.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/siva-puja-sthavam-tganeshan/siva-puja-sthavam-tganeshan/web",
+      "info_url": "https://www.himalayanacademy.com/view/siva-puja-sthavam-tganeshan",
+      "base_url": "https://www.himalayanacademy.com/media/books/siva-puja-sthavam-tganeshan/web",
+      "epub": "../../media/books/siva-puja-sthavam-tganeshan/siva-puja-sthavam-tganeshan.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/siva-puja-sthavam_gss-tm/siva-puja-sthavam_gss-tm/web",
+      "info_url": "https://www.himalayanacademy.com/view/siva-puja-sthavam_gss-tm",
+      "base_url": "https://www.himalayanacademy.com/media/books/siva-puja-sthavam_gss-tm/web",
+      "epub": "../../media/books/siva-puja-sthavam_gss-tm/siva-puja-sthavam_gss-tm.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/sivagnana-bodha_sa-en/sivagnana-bodha_sa-en/web",
+      "info_url": "https://www.himalayanacademy.com/view/sivagnana-bodha_sa-en",
+      "base_url": "https://www.himalayanacademy.com/media/books/sivagnana-bodha_sa-en/web",
+      "epub": "../../media/books/sivagnana-bodha_sa-en/sivagnana-bodha_sa-en.epub"
+    },
+    {
+      "description": "  A brief analysis of other Indian philosophical systems from the standpoint of Saiva Siddhanta.",
+      "output_folder": "../../media/books/sivagnana-siddiyar-parapakkam/sivagnana-siddiyar-parapakkam/web",
+      "info_url": "https://www.himalayanacademy.com/view/sivagnana-siddiyar-parapakkam",
+      "base_url": "https://www.himalayanacademy.com/media/books/sivagnana-siddiyar-parapakkam/web",
+      "epub": "../../media/books/sivagnana-siddiyar-parapakkam/sivagnana-siddiyar-parapakkam.epub"
+    },
+    {
+      "description": "Explains the fundamental philosophical points of Saiva Siddhanta.",
+      "output_folder": "../../media/books/sivaneri-prakasham/sivaneri-prakasham/web",
+      "info_url": "https://www.himalayanacademy.com/view/sivaneri-prakasham",
+      "base_url": "https://www.himalayanacademy.com/media/books/sivaneri-prakasham/web",
+      "epub": "../../media/books/sivaneri-prakasham/sivaneri-prakasham.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/sivas-cosmic-dance/sivas-cosmic-dance/web",
+      "info_url": "https://www.himalayanacademy.com/view/sivas-cosmic-dance",
+      "base_url": "https://www.himalayanacademy.com/media/books/sivas-cosmic-dance/web",
+      "epub": "../../media/books/sivas-cosmic-dance/sivas-cosmic-dance.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/six-streams-of-hindu-philosophy_ei/six-streams-of-hindu-philosophy_ei/web",
+      "info_url": "https://www.himalayanacademy.com/view/six-streams-of-hindu-philosophy_ei",
+      "base_url": "https://www.himalayanacademy.com/media/books/six-streams-of-hindu-philosophy_ei/web",
+      "epub": "../../media/books/six-streams-of-hindu-philosophy_ei/six-streams-of-hindu-philosophy_ei.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/solemn-aspirations/solemn-aspirations/web",
+      "info_url": "https://www.himalayanacademy.com/view/solemn-aspirations",
+      "base_url": "https://www.himalayanacademy.com/media/books/solemn-aspirations/web",
+      "epub": "../../media/books/solemn-aspirations/solemn-aspirations.epub"
+    },
+    {
+      "description": "Explains the Atmartha Siva Puja. Contains visualisations of all the deities of the\nfive enclosures surrounding Siva. Published by G.Karthikeyasivam, 2006",
+      "output_folder": "../../media/books/sri-sivapanchavarana-sthothram/sri-sivapanchavarana-sthothram/web",
+      "info_url": "https://www.himalayanacademy.com/view/sri-sivapanchavarana-sthothram",
+      "base_url": "https://www.himalayanacademy.com/media/books/sri-sivapanchavarana-sthothram/web",
+      "epub": "../../media/books/sri-sivapanchavarana-sthothram/sri-sivapanchavarana-sthothram.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/sthuthi-sangraha_sa/sthuthi-sangraha_sa/web",
+      "info_url": "https://www.himalayanacademy.com/view/sthuthi-sangraha_sa",
+      "base_url": "https://www.himalayanacademy.com/media/books/sthuthi-sangraha_sa/web",
+      "epub": "../../media/books/sthuthi-sangraha_sa/sthuthi-sangraha_sa.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/stoppt-den-krieg-zu-hause_de/stoppt-den-krieg-zu-hause_de/web",
+      "info_url": "https://www.himalayanacademy.com/view/stoppt-den-krieg-zu-hause_de",
+      "base_url": "https://www.himalayanacademy.com/media/books/stoppt-den-krieg-zu-hause_de/web",
+      "epub": "../../media/books/stoppt-den-krieg-zu-hause_de/stoppt-den-krieg-zu-hause_de.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/temple-worship/temple-worship/web",
+      "info_url": "https://www.himalayanacademy.com/view/temple-worship",
+      "base_url": "https://www.himalayanacademy.com/media/books/temple-worship/web",
+      "epub": "../../media/books/temple-worship/temple-worship.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/ten-questions-and-answers-in-tamil_ta/ten-questions-and-answers-in-tamil_ta/web",
+      "info_url": "https://www.himalayanacademy.com/view/ten-questions-and-answers-in-tamil_ta",
+      "base_url": "https://www.himalayanacademy.com/media/books/ten-questions-and-answers-in-tamil_ta/web",
+      "epub": "../../media/books/ten-questions-and-answers-in-tamil_ta/ten-questions-and-answers-in-tamil_ta.epub"
+    },
+    {
+      "description": "<i>Ten Tales About Religious Life</i> is a series of short stories for 10 to 12-year-olds  illustrating key concepts for good conduct. Set in a modern context, they will entertain, inspire and engage your children, guiding them toward a lifestyle of good character. Audio is included where the eBook Reader is able to play it.",
+      "output_folder": "../../media/books/ten-tales-about-religious-life/ten-tales-about-religious-life/web",
+      "info_url": "https://www.himalayanacademy.com/view/ten-tales-about-religious-life",
+      "base_url": "https://www.himalayanacademy.com/media/books/ten-tales-about-religious-life/web",
+      "epub": "../../media/books/ten-tales-about-religious-life/ten-tales-about-religious-life.epub"
+    },
+    {
+      "description": "<i>Ten Tales About Self-Control</i> is a series of short stories for 10 to 12-year-olds illustrating key concepts for self-discipline. Set in a modern context, they will entertain, inspire and engage your children, guiding them toward a lifestyle of good character. Audio is included where the eBook Reader is able to play it.",
+      "output_folder": "../../media/books/ten-tales-about-self-control/ten-tales-about-self-control/web",
+      "info_url": "https://www.himalayanacademy.com/view/ten-tales-about-self-control",
+      "base_url": "https://www.himalayanacademy.com/media/books/ten-tales-about-self-control/web",
+      "epub": "../../media/books/ten-tales-about-self-control/ten-tales-about-self-control.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/test_aag/test_aag/web",
+      "info_url": "https://www.himalayanacademy.com/view/test_aag",
+      "base_url": "https://www.himalayanacademy.com/media/books/test_aag/web",
+      "epub": "../../media/books/test_aag/test_aag.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/test_this_new_book/test_this_new_book/web",
+      "info_url": "https://www.himalayanacademy.com/view/test_this_new_book",
+      "base_url": "https://www.himalayanacademy.com/media/books/test_this_new_book/web",
+      "epub": "../../media/books/test_this_new_book/test_this_new_book.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/testament-of-truth/testament-of-truth/web",
+      "info_url": "https://www.himalayanacademy.com/view/testament-of-truth",
+      "base_url": "https://www.himalayanacademy.com/media/books/testament-of-truth/web",
+      "epub": "../../media/books/testament-of-truth/testament-of-truth.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/the-chakras_ei/the-chakras_ei/web",
+      "info_url": "https://www.himalayanacademy.com/view/the-chakras_ei",
+      "base_url": "https://www.himalayanacademy.com/media/books/the-chakras_ei/web",
+      "epub": "../../media/books/the-chakras_ei/the-chakras_ei.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/the-five-states-of-mind_ei/the-five-states-of-mind_ei/web",
+      "info_url": "https://www.himalayanacademy.com/view/the-five-states-of-mind_ei",
+      "base_url": "https://www.himalayanacademy.com/media/books/the-five-states-of-mind_ei/web",
+      "epub": "../../media/books/the-five-states-of-mind_ei/the-five-states-of-mind_ei.epub"
+    },
+    {
+      "description": "The illustrated stories of Satguru Sivaya Subramuniyaswami, his guru Siva Yogaswami and five preceding masters, who all held truth in the palm of their hand and inspired slumbering souls to \"Know the Self\"",
+      "output_folder": "../../media/books/the-guru-chronicles/the-guru-chronicles/web",
+      "info_url": "https://www.himalayanacademy.com/view/the-guru-chronicles",
+      "base_url": "https://www.himalayanacademy.com/media/books/the-guru-chronicles/web",
+      "epub": "../../media/books/the-guru-chronicles/the-guru-chronicles.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/the-history-of-hindu-india/the-history-of-hindu-india/web",
+      "info_url": "https://www.himalayanacademy.com/view/the-history-of-hindu-india",
+      "base_url": "https://www.himalayanacademy.com/media/books/the-history-of-hindu-india/web",
+      "epub": "../../media/books/the-history-of-hindu-india/the-history-of-hindu-india.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/the-home-shrine_ei/the-home-shrine_ei/web",
+      "info_url": "https://www.himalayanacademy.com/view/the-home-shrine_ei",
+      "base_url": "https://www.himalayanacademy.com/media/books/the-home-shrine_ei/web",
+      "epub": "../../media/books/the-home-shrine_ei/the-home-shrine_ei.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/the-human-aura_ei/the-human-aura_ei/web",
+      "info_url": "https://www.himalayanacademy.com/view/the-human-aura_ei",
+      "base_url": "https://www.himalayanacademy.com/media/books/the-human-aura_ei/web",
+      "epub": "../../media/books/the-human-aura_ei/the-human-aura_ei.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/the-meat-free-life_ei/the-meat-free-life_ei/web",
+      "info_url": "https://www.himalayanacademy.com/view/the-meat-free-life_ei",
+      "base_url": "https://www.himalayanacademy.com/media/books/the-meat-free-life_ei/web",
+      "epub": "../../media/books/the-meat-free-life_ei/the-meat-free-life_ei.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/the-mystic-mind-and-music-of-kabir_ei/the-mystic-mind-and-music-of-kabir_ei/web",
+      "info_url": "https://www.himalayanacademy.com/view/the-mystic-mind-and-music-of-kabir_ei",
+      "base_url": "https://www.himalayanacademy.com/media/books/the-mystic-mind-and-music-of-kabir_ei/web",
+      "epub": "../../media/books/the-mystic-mind-and-music-of-kabir_ei/the-mystic-mind-and-music-of-kabir_ei.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/the-power-of-affirmation_ei/the-power-of-affirmation_ei/web",
+      "info_url": "https://www.himalayanacademy.com/view/the-power-of-affirmation_ei",
+      "base_url": "https://www.himalayanacademy.com/media/books/the-power-of-affirmation_ei/web",
+      "epub": "../../media/books/the-power-of-affirmation_ei/the-power-of-affirmation_ei.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/the-satguru_ei/the-satguru_ei/web",
+      "info_url": "https://www.himalayanacademy.com/view/the-satguru_ei",
+      "base_url": "https://www.himalayanacademy.com/media/books/the-satguru_ei/web",
+      "epub": "../../media/books/the-satguru_ei/the-satguru_ei.epub"
+    },
+    {
+      "description": "The powerful devotional hymns of Saint Thayumanavar, 1,447 verses composed 300 years ago, are still alive in the hearts of millions. It is hard to find a clearer vision of Lord Siva, at once devotional and nondual.  Translated by Dr. B. Natarajan",
+      "output_folder": "../../media/books/the-songs-of-tayumanavar/the-songs-of-tayumanavar/web",
+      "info_url": "https://www.himalayanacademy.com/view/the-songs-of-tayumanavar",
+      "base_url": "https://www.himalayanacademy.com/media/books/the-songs-of-tayumanavar/web",
+      "epub": "../../media/books/the-songs-of-tayumanavar/the-songs-of-tayumanavar.epub"
+    },
+    {
+      "description": "In this 2,200-year-old classic the South Indian sage Tiruvalluvar tells us of friends and foes, family, God, business, law, spies, love, hate and all that's human",
+      "output_folder": "../../media/books/tirukural/tirukural/web",
+      "info_url": "https://www.himalayanacademy.com/view/tirukural",
+      "base_url": "https://www.himalayanacademy.com/media/books/tirukural/web",
+      "epub": "../../media/books/tirukural/tirukural.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/tirumantiram/tirumantiram/web",
+      "info_url": "https://www.himalayanacademy.com/view/tirumantiram",
+      "base_url": "https://www.himalayanacademy.com/media/books/tirumantiram/web",
+      "epub": "../../media/books/tirumantiram/tirumantiram.epub"
+    },
+    {
+      "description": "This concise book offers an  introduction to Gurudeva?s mystical language of Shum, and then provides twelve meditations which the serious practitioner can use every day through twelve months.  The focus on core spiritual practices and development. Dive deep within and open up new realms of inner vision with these other-wordly mind maps.",
+      "output_folder": "../../media/books/twelve-shum-meditations/twelve-shum-meditations/web",
+      "info_url": "https://www.himalayanacademy.com/view/twelve-shum-meditations",
+      "base_url": "https://www.himalayanacademy.com/media/books/twelve-shum-meditations/web",
+      "epub": "../../media/books/twelve-shum-meditations/twelve-shum-meditations.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/ukrainian-9-beliefs_uk/ukrainian-9-beliefs_uk/web",
+      "info_url": "https://www.himalayanacademy.com/view/ukrainian-9-beliefs_uk",
+      "base_url": "https://www.himalayanacademy.com/media/books/ukrainian-9-beliefs_uk/web",
+      "epub": "../../media/books/ukrainian-9-beliefs_uk/ukrainian-9-beliefs_uk.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/uniendose-a-siva_es/uniendose-a-siva_es/web",
+      "info_url": "https://www.himalayanacademy.com/view/uniendose-a-siva_es",
+      "base_url": "https://www.himalayanacademy.com/media/books/uniendose-a-siva_es/web",
+      "epub": "../../media/books/uniendose-a-siva_es/uniendose-a-siva_es.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/varuna-paddhathi/varuna-paddhathi/web",
+      "info_url": "https://www.himalayanacademy.com/view/varuna-paddhathi",
+      "base_url": "https://www.himalayanacademy.com/media/books/varuna-paddhathi/web",
+      "epub": "../../media/books/varuna-paddhathi/varuna-paddhathi.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/vedanta-course/vedanta-course/web",
+      "info_url": "https://www.himalayanacademy.com/view/vedanta-course",
+      "base_url": "https://www.himalayanacademy.com/media/books/vedanta-course/web",
+      "epub": "../../media/books/vedanta-course/vedanta-course.epub"
+    },
+    {
+      "description": "The Vedas are Hinduism's primary and most authoritative revealed scriptures, dating back as far as 6,000 bce, known as shruti, that which is \"heard.\" The Vedas, literally \"wisdom,\" are the sagely revelations of ancient rishis, over 100,000 verses, as well as additional prose, imparting a range of knowledge from earthy devotion to high philosophy. This book is a modern revelation of the most ancient scripture in the world, translation and commentary by Raimon Panikkar. ",
+      "output_folder": "../../media/books/vedic-experience/vedic-experience/web",
+      "info_url": "https://www.himalayanacademy.com/view/vedic-experience",
+      "base_url": "https://www.himalayanacademy.com/media/books/vedic-experience/web",
+      "epub": "../../media/books/vedic-experience/vedic-experience.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/verschmelzung-mit-siva_de/verschmelzung-mit-siva_de/web",
+      "info_url": "https://www.himalayanacademy.com/view/verschmelzung-mit-siva_de",
+      "base_url": "https://www.himalayanacademy.com/media/books/verschmelzung-mit-siva_de/web",
+      "epub": "../../media/books/verschmelzung-mit-siva_de/verschmelzung-mit-siva_de.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/viviendo-con-siva_es/viviendo-con-siva_es/web",
+      "info_url": "https://www.himalayanacademy.com/view/viviendo-con-siva_es",
+      "base_url": "https://www.himalayanacademy.com/media/books/viviendo-con-siva_es/web",
+      "epub": "../../media/books/viviendo-con-siva_es/viviendo-con-siva_es.epub"
+    },
+    {
+      "description": "A South Indian sage, Tiruvalluvar, tells us of friends and foes, family, God, business, law, spies, love, hate and all that?s human in his classic masterpiece, the <i>Tirukural</i>.",
+      "output_folder": "../../media/books/weavers-wisdom/weavers-wisdom/web",
+      "info_url": "https://www.himalayanacademy.com/view/weavers-wisdom",
+      "base_url": "https://www.himalayanacademy.com/media/books/weavers-wisdom/web",
+      "epub": "../../media/books/weavers-wisdom/weavers-wisdom.epub"
+    },
+    {
+      "description": "A rare inside look at the world's most venerable and vibrant religion, revealed in forty-six illustrated journeys into an intriguing realm of temples, Deities, yoga, philosophy, gurus, tolerance and family life.",
+      "output_folder": "../../media/books/what-is-hinduism/what-is-hinduism/web",
+      "info_url": "https://www.himalayanacademy.com/view/what-is-hinduism",
+      "base_url": "https://www.himalayanacademy.com/media/books/what-is-hinduism/web",
+      "epub": "../../media/books/what-is-hinduism/what-is-hinduism.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/who-is-a-hindu_ei/who-is-a-hindu_ei/web",
+      "info_url": "https://www.himalayanacademy.com/view/who-is-a-hindu_ei",
+      "base_url": "https://www.himalayanacademy.com/media/books/who-is-a-hindu_ei/web",
+      "epub": "../../media/books/who-is-a-hindu_ei/who-is-a-hindu_ei.epub"
+    },
+    {
+      "description": "Short pithy insights of a great Saivaite Hindu mystic and saint. These sayings for Siva Yogaswami can transform your life.",
+      "output_folder": "../../media/books/words-of-our-master/words-of-our-master/web",
+      "info_url": "https://www.himalayanacademy.com/view/words-of-our-master",
+      "base_url": "https://www.himalayanacademy.com/media/books/words-of-our-master/web",
+      "epub": "../../media/books/words-of-our-master/words-of-our-master.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/yoga-primer_ei/yoga-primer_ei/web",
+      "info_url": "https://www.himalayanacademy.com/view/yoga-primer_ei",
+      "base_url": "https://www.himalayanacademy.com/media/books/yoga-primer_ei/web",
+      "epub": "../../media/books/yoga-primer_ei/yoga-primer_ei.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/yoga-swamigal/yoga-swamigal/web",
+      "info_url": "https://www.himalayanacademy.com/view/yoga-swamigal",
+      "base_url": "https://www.himalayanacademy.com/media/books/yoga-swamigal/web",
+      "epub": "../../media/books/yoga-swamigal/yoga-swamigal.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/yogas-forgotten-foundation/yogas-forgotten-foundation/web",
+      "info_url": "https://www.himalayanacademy.com/view/yogas-forgotten-foundation",
+      "base_url": "https://www.himalayanacademy.com/media/books/yogas-forgotten-foundation/web",
+      "epub": "../../media/books/yogas-forgotten-foundation/yogas-forgotten-foundation.epub"
+    },
+    {
+      "description": "",
+      "output_folder": "../../media/books/yogaswami_ei/yogaswami_ei/web",
+      "info_url": "https://www.himalayanacademy.com/view/yogaswami_ei",
+      "base_url": "https://www.himalayanacademy.com/media/books/yogaswami_ei/web",
+      "epub": "../../media/books/yogaswami_ei/yogaswami_ei.epub"
+    }
+  ]
+}

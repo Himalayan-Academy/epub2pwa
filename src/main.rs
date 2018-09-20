@@ -20,7 +20,7 @@ extern crate serde_derive;
 
 use epub::doc::EpubDoc;
 use fs_extra::dir::*;
-use image::{FilterType, GenericImage};
+use image::{imageops, FilterType, GenericImage, ImageBuffer};
 use scraper::{Html, Selector};
 use std::collections::HashMap;
 use std::ffi::OsStr;
@@ -80,27 +80,6 @@ fn move_service_worker(output_root: &Path) {
         output_root.join("resources/static/sw.js"),
         output_root.join("sw.js"),
     ).expect("Can't create sw.js");
-
-    //todo: add timestamp renaming here
-
-    // let start = SystemTime::now();
-    // let since_the_epoch = start
-    //     .duration_since(UNIX_EPOCH)
-    //     .expect("Time went backwards");
-    // let secs = since_the_epoch.as_secs().to_string();
-
-    // // renaming CSS
-    // fs::rename(
-    //     output_root.join("resources/static/mobile.css"),
-    //     output_root.join(format!("resources/static/mobile.{}.css", &secs)),
-    // ).expect("Can't rename mobile.css");
-
-    // fs::rename(
-    //     output_root.join("resources/static/reader.css"),
-    //     output_root.join(format!("resources/static/reader.{}.css", &secs)),
-    // ).expect("Can't rename reader.css");
-
-    // // update all HTML.
 }
 
 fn get_metadata(book: &Book) -> HashMap<&str, String> {
@@ -145,18 +124,21 @@ fn compress_cover(book: &Book) {
         .save(output_root.join("cover.jpg"))
         .expect("Saving image failed");
 
-    let ref mut _background = image::RgbaImage::new(ICON_WIDTH, ICON_WIDTH);
+    let ref mut background = image::RgbaImage::new(ICON_WIDTH, ICON_WIDTH);
     let img = image::open("temp/cover.jpg").unwrap();
-    let resized_icon = img.resize_exact(ICON_WIDTH, ICON_WIDTH, FilterType::Lanczos3);
-    // let icon_buf = ImageBuffer::from_vec(
-    //     resized_icon.width(),
-    //     resized_icon.height(),
-    //     resized_icon.raw_pixels(),
-    // ).expect("can't create icon buffer");
-
-    // imageops::overlay(background, &icon_buf, ICON_WIDTH / 2, ICON_WIDTH / 2);
-
+    let resized_icon = img.resize(ICON_WIDTH, ICON_WIDTH, FilterType::Lanczos3);
     resized_icon
+        .save(output_root.join("cover_resized.jpg"))
+        .expect("Saving resized cover");
+
+    imageops::overlay(
+        background,
+        &resized_icon.to_rgba(),
+        ICON_WIDTH / 2,
+        ICON_WIDTH / 2,
+    );
+
+    background
         .save(output_root.join("icon.jpg"))
         .expect("Saving icon failed");
 
@@ -514,10 +496,10 @@ fn main() {
         (@arg INFOURL: -i --infourl +takes_value "Info URL for the book")
         (@arg BASEURL: -u --baseurl +takes_value "Base URL for the book")
         (@arg DESCRIPTION: -d --description +takes_value "Description for the book")
-        (@arg INPUT: -i --input +takes_value "Sets the input file to use")
+        (@arg EBOOK: -e --epub +takes_value "Sets the epub file to use")
         (@arg OUTPUT: -o --output +takes_value "Sets the output folder")
         (@arg BATCH: -b --batch +takes_value "Pass a json for batch jobs")
-        (@arg debug: -d ... "Sets the level of debugging information")
+        (@arg debug: -v ... "Sets the level of debugging information")
     ).get_matches();
 
     let batch = matches.value_of("BATCH");
@@ -529,7 +511,7 @@ fn main() {
         None => {
             // single book processing
             let epub = matches
-                .value_of("INPUT")
+                .value_of("EBOOK")
                 .expect("Must pass ePub file as argument.");
             let output_folder = matches.value_of("OUTPUT").unwrap_or(DEFAULT_OUTPUT_FOLDER);
             let info_url = matches.value_of("INFOURL").unwrap_or("");

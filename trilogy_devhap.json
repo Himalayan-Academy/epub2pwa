@@ -2,23 +2,23 @@
   "templates": "",
   "books": [
     {
-      "base_url": "https://dev.himalayanacademy.com/media/books/dancing-with-siva/web2",
-      "info_url": "https://dev.himalayanacademy.com/view/dancing-with-siva",
-      "output_folder": "../../media/books/dancing-with-siva/web2",
+      "base_url": "https://www.himalayanacademy.com/media/books/dancing-with-siva/web2",
+      "info_url": "https://www.himalayanacademy.com/view/dancing-with-siva",
+      "output_folder": "../../media/books/dancing-with-siva/web",
       "epub": "../../media/books/dancing-with-siva/dancing-with-siva.epub",
       "description": "Every spiritually-inclined human being will be enriched by the path revealed in this extraordinary book. India's tolerant and diverse vision of the Divine is all here: meditative, devotional, philosophical, scriptural and yogic, answering the vital questions: What are life's ultimate goals? How can I achieve them? How do Hindus view family, sex, sin, worship, death and nonviolence? What are the foremost schools of Hindu thought, and what do they teach? How do all the great religions look at God, salvation, heaven and hell? How did Hinduism evolve through history? What do we teach to children? Dancing with Siva is Book One in the Master Course Trilogy of Sivaya Subramuniyaswami, a traditional satguru who guided the global Hindu renaissance for half a century, named by Delhi's World Religious Parliament as a gifted Jagadacharya, or world teacher."
     },
     {
-      "base_url": "https://dev.himalayanacademy.com/media/books/living-with-siva/web2",
-      "info_url": "https://dev.himalayanacademy.com/view/living-with-siva",
-      "output_folder": "../../media/books/living-with-siva/web2",
+      "base_url": "https://www.himalayanacademy.com/media/books/living-with-siva/web2",
+      "info_url": "https://www.himalayanacademy.com/view/living-with-siva",
+      "output_folder": "../../media/books/living-with-siva/web",
       "epub": "../../media/books/living-with-siva/living-with-siva.epub",
       "description": "Living with Siva is the second in the series of The Master Course trilogy. The 365 daily lessons include spiritual rules &quot;for the lion-hearted&quot; on God, worship, marriage and family life, money, sex, child-rearing, nonviolence and tolerance, forgiveness, hospitality, karma, nature and more.     It is a unique daily devotional which guides the seeker who wishes to take the essential first steps on the spiritual path. This includes systematic principles of self-discipline known in traditional Hinduism as the yamas and niyamas. Applied daily, the lessons bring order and discipline into our lives establishing a firm foundation for a successful spiritual life. Gurudeva frankly addresses the problematic areas of modern living and offers sound, proven advice based on his 50 years of ministry."
     },
     {
-      "base_url": "https://dev.himalayanacademy.com/media/books/merging-with-siva/web2",
-      "info_url": "https://dev.himalayanacademy.com/view/merging-with-siva",
-      "output_folder": "../../media/books/merging-with-siva/web2",
+      "base_url": "https://www.himalayanacademy.com/media/books/merging-with-siva/web2",
+      "info_url": "https://www.himalayanacademy.com/view/merging-with-siva",
+      "output_folder": "../../media/books/merging-with-siva/web",
       "epub": "../../media/books/merging-with-siva/merging-with-siva.epub",
       "description": "Merging with Siva, Hinduism's Contemporary Metaphysics is a guide for one who is ready to diligently walk the spiritual path. Great new vistas open up throughout its 365 daily lessons as Gurudeva shares, in the clearest terms, deep metaphysical insights into the nature of God, soul and world, mind, emotions, ultimate realizations, chakras, purpose of life on earth and much, much more. Simple but effective practices are taught: how to remould our nature and karmas, calm the mind, develop self-esteem, begin to meditate, clear up the past and create a bright future. At the same time, the seeker is guided in establishing a regular devotional and yogic practice whereby the gains of his inner life and realizations are stabilized and used in practical ways."
     }

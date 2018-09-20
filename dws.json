@@ -1,0 +1,12 @@
+{
+  "templates": "",
+  "books": [
+    {
+      "base_url": "https://www.himalayanacademy.com/media/books/dancing-with-siva/web",
+      "info_url": "https://www.himalayanacademy.com/view/dancing-with-siva",
+      "output_folder": "./test",
+      "epub": "../hap-epub-export-tool/books/dancing-with-siva/dancing-with-siva.epub",
+      "description": "Every spiritually-inclined human being will be enriched by the path revealed in this extraordinary book. India's tolerant and diverse vision of the Divine is all here: meditative, devotional, philosophical, scriptural and yogic, answering the vital questions: What are life's ultimate goals? How can I achieve them? How do Hindus view family, sex, sin, worship, death and nonviolence? What are the foremost schools of Hindu thought, and what do they teach? How do all the great religions look at God, salvation, heaven and hell? How did Hinduism evolve through history? What do we teach to children? Dancing with Siva is Book One in the Master Course Trilogy of Sivaya Subramuniyaswami, a traditional satguru who guided the global Hindu renaissance for half a century, named by Delhi's World Religious Parliament as a gifted Jagadacharya, or world teacher."
+    }
+  ]
+}

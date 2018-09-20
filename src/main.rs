@@ -125,6 +125,10 @@ fn compress_cover(book: &Book) {
         .expect("Saving image failed");
 
     let ref mut background = image::RgbaImage::new(ICON_WIDTH, ICON_WIDTH);
+    for (x, y, pixel) in background.enumerate_pixels_mut() {
+        *pixel = image::Rgba([33, 33, 33, 255]);
+    }
+
     let img = image::open("temp/cover.jpg").unwrap();
     let resized_icon = img.resize(ICON_WIDTH, ICON_WIDTH, FilterType::Lanczos3);
     resized_icon
@@ -134,12 +138,12 @@ fn compress_cover(book: &Book) {
     imageops::overlay(
         background,
         &resized_icon.to_rgba(),
-        ICON_WIDTH / 2,
-        ICON_WIDTH / 2,
+        (ICON_WIDTH - resized_icon.width()) / 2,
+        0,
     );
 
     background
-        .save(output_root.join("icon.jpg"))
+        .save(output_root.join("icon.png"))
         .expect("Saving icon failed");
 
     // create cover html ...

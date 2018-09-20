@@ -489,7 +489,7 @@ fn process_book(book: &Book) {
         let path = &val.0;
         let mime = &doc.get_resource_mime_by_path(&path).unwrap_or_default();
 
-        if mime.contains("image/") {
+        if mime.contains("image/") && !mime.contains("gif") {
             print!("#");
             compress_image_resource(&book.epub, &key, &path, &output_root);
         } else if mime.contains("html") {

@@ -202,7 +202,7 @@ fn compress_cover(book: &Book) {
             let next_chapter_id = if doc.spine.len() > 2 {
                 &doc.spine[2]
             } else {
-                &doc.spine[0]
+                &doc.spine[1]
             };
             let next_chapter = &doc.resources.get(next_chapter_id);
 

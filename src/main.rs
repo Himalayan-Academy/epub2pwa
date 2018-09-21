@@ -43,12 +43,22 @@ struct Book {
     description: String,
     epub: String,
     output_folder: String,
+    status: String,
+    error: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Clone)]
 struct BatchJob {
-    templates: String,
+    report: BatchJobReport,
     books: Vec<Book>,
+}
+
+#[derive(Serialize, Deserialize, Clone)]
+struct BatchJobReport {
+    success: u32,
+    skipped: u32,
+    error: u32,
+    elapsed_time: String,
 }
 
 lazy_static! {
@@ -524,40 +534,30 @@ fn process_book(book: &Book) {
 }
 
 fn process_batch_job(path: &str) {
-    // Open the file in read-only mode.
     let file = File::open(path).expect("Can't open batch job json file");
 
-    // Read the JSON contents of the file as an instance of `User`.
-    let batch: BatchJob = serde_json::from_reader(file).expect("Can't decode batch job json file");
-    let mut processed: Vec<Book> = vec![];
-    let mut non_processed: Vec<Book> = vec![];
-    for book in batch.books {
-        if Path::new(&book.epub).exists() {
-            process_book(&book);
-            &processed.push(book.clone());
-            println!("webapp: {}", &book.base_url);
+    let mut batch: BatchJob =
+        serde_json::from_reader(file).expect("Can't decode batch job json file");
+    for i in 0..batch.books.len() {
+        if batch.books[i].status == "pending" {
+            let book = batch.books[i].clone();
+            if Path::new(&book.epub).exists() {
+                process_book(&book);
+                batch.books[i].status = "success".to_string();
+                batch.report.success += 1;
+                println!("webapp: {}\n", &book.base_url);
+            } else {
+                batch.books[i].status = "error".to_string();
+                batch.books[i].error = format!("can't find book file: {}", &book.epub);
+                batch.report.error += 1;
+            }
         } else {
-            &non_processed.push(book.clone());
-            println!("can't find book file: {}", &book.epub);
+            batch.report.skipped += 1;
         }
-        // println!("\n");
+
+        let j = serde_json::to_string(&mut batch).expect("Can't serialize report");
+        fs::write(path, &j).expect("Can't write batch json");
     }
-
-    // Serialize it to a JSON string.
-    let j = serde_json::to_string(&processed).expect("Can't display processed queue");
-    let nj = serde_json::to_string(&non_processed).expect("Can't display non processed queue");
-
-    // Print, write to a file, or send to an HTTP server.
-
-    let start = SystemTime::now();
-    let since_the_epoch = start
-        .duration_since(UNIX_EPOCH)
-        .expect("Time went backwards");
-    let secs = since_the_epoch.as_secs().to_string();
-    fs::write(format!("batchjob.{}.success.json", &secs), &j)
-        .expect("Can't write success batch report");
-    fs::write(format!("batchjob.{}.errors.json", &secs), &nj)
-        .expect("Can't write error batch report");
 }
 
 fn main() {
@@ -596,6 +596,8 @@ fn main() {
                 epub: epub.to_string(),
                 description: description.to_string(),
                 output_folder: output_folder.to_string(),
+                status: "pending".to_string(),
+                error: "".to_string(),
             };
 
             process_book(&book);

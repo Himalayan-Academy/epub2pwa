@@ -87,11 +87,11 @@
 		position: relative;
 		margin: auto;
 	}
-	div.illustration.hundred img {
+	div.illustration.hundred {
 		max-width: 100%;
 		width: 100%;
 	}
-	div.illustration.hundreds img {
+	div.illustration.hundreds {
 		max-width: 100%;
 		width: 100%;
 	}

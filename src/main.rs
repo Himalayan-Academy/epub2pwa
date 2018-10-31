@@ -31,7 +31,8 @@ use std::path::Path;
 use std::time::{SystemTime, UNIX_EPOCH};
 use tera::{Context, Tera};
 
-const MAX_WIDTH: u32 = 400;
+const MAX_WIDTH: u32 = 600;
+const MAX_HEIGHT: u32 = 900;
 const COVER_WIDTH: u32 = 700;
 const ICON_WIDTH: u32 = 192;
 static DEFAULT_OUTPUT_FOLDER: &'static str = "web/";
@@ -449,7 +450,7 @@ fn compress_image_resource(input_file: &str, key: &str, path: &str, output_root:
         .join(format!("{}.{}", &key, &ext)); // pay attention to this, it might be the wrong name.
 
     if width > MAX_WIDTH {
-        let resized = img.resize(MAX_WIDTH, MAX_WIDTH, FilterType::Lanczos3);
+        let resized = img.resize(MAX_WIDTH, MAX_HEIGHT, FilterType::Lanczos3);
         resized
             .save(&compressed_filename)
             .expect("Saving image failed");

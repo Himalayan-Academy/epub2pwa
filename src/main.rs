@@ -468,6 +468,7 @@ fn compress_image_resource(input_file: &str, key: &str, path: &str, output_root:
         Err(e) => {
             println!("Error with image {}: {}", &path, &e);
             println!("Just copying it...");
+            let data = doc.get_resource(key);
             let compressed_filename = output_root
                 .join("images")
                 .join(format!("{}.{}", &key, &ext)); // pay attention to this, it might be the wrong name.

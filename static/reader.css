@@ -92,7 +92,15 @@
 		width: 100%;
 	}
 	div.illustration.hundreds {
-		max-width: 100%;
-		width: 100%;
+		max-width: 100% !important;
+		width: 100% !important;
+	}
+	div.illustration.hundred img {
+		max-width: 100% !important;
+		width: 100% !important;
+	}
+	div.illustration.hundreds img {
+		max-width: 100% !important;
+		width: 100% !important;
 	}
 }

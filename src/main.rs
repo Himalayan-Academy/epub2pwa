@@ -440,10 +440,10 @@ fn compress_image_resource(input_file: &str, key: &str, path: &str, output_root:
     // write raw file
     let f = fs::File::create(&raw_filename);
     assert!(f.is_ok());
-    let mut f = f.unwrap();
+    let mut f = f.expect("writing raw filename");
     let _resp = f.write_all(&data.unwrap().as_slice());
 
-    let img = image::open(raw_filename).unwrap();
+    let img = image::open(raw_filename).expect("opening raw filename");
     let (width, _height) = img.dimensions();
     let compressed_filename = output_root
         .join("images")
@@ -459,7 +459,7 @@ fn compress_image_resource(input_file: &str, key: &str, path: &str, output_root:
 
         let f = fs::File::create(&compressed_filename);
         assert!(f.is_ok());
-        let mut f = f.unwrap();
+        let mut f = f.expect("error writting compressed file");
         let _resp = f.write_all(&data.unwrap().as_slice());
     }
 }

@@ -82,14 +82,16 @@ fn copy_index_to_cover(output_root: &Path) {
     fs::copy(
         output_root.join("index.html"),
         output_root.join("cover.html"),
-    ).expect("Can't create cover.html");
+    )
+    .expect("Can't create cover.html");
 }
 
 fn move_service_worker(output_root: &Path) {
     fs::copy(
         output_root.join("resources/static/sw.js"),
         output_root.join("sw.js"),
-    ).expect("Can't create sw.js");
+    )
+    .expect("Can't create sw.js");
 }
 
 fn get_metadata(book: &Book) -> HashMap<&str, String> {
@@ -120,6 +122,11 @@ fn compress_cover(book: &Book) {
     assert!(doc.is_ok());
     let mut doc = doc.unwrap();
     println!("Extracting cover...");
+    let cover_id = doc.get_cover_id().unwrap();
+    let cover_mime = doc
+        .get_resource_mime(&cover_id)
+        .expect("Can't get cover mime");
+    println!("Cover mime: {}", &cover_mime);
     let cover_data = doc.get_cover();
 
     match cover_data {
@@ -161,13 +168,18 @@ fn compress_cover(book: &Book) {
             let _resp = f.write_all(&rendered.as_bytes());
         }
         Ok(data) => {
-            let f = fs::File::create("temp/cover.jpg");
+            let tempfile = match cover_mime.as_ref() {
+                "image/png" => "temp/cover.png",
+                "image/jpg" | "image/jpeg" => "temp/cover.jpg",
+                _ => "temp/cover.jpg",
+            };
+            let f = fs::File::create(&tempfile);
             assert!(f.is_ok());
             let mut f = f.unwrap();
             let _resp = f.write_all(&data);
             println!("Compressing cover...");
 
-            let img = image::open("temp/cover.jpg").unwrap();
+            let img = image::open(&tempfile).unwrap();
             let resized = img.resize(COVER_WIDTH, COVER_WIDTH, FilterType::Lanczos3);
             resized
                 .save(output_root.join("cover.jpg"))
@@ -178,7 +190,7 @@ fn compress_cover(book: &Book) {
                 *pixel = image::Rgba([33, 33, 33, 0]);
             }
 
-            let img = image::open("temp/cover.jpg").unwrap();
+            let img = image::open(&tempfile).unwrap();
             let resized_icon = img.resize(ICON_WIDTH, ICON_WIDTH, FilterType::Lanczos3);
             resized_icon
                 .save(output_root.join("cover_resized.jpg"))
@@ -572,7 +584,8 @@ fn main() {
         (@arg OUTPUT: -o --output +takes_value "Sets the output folder")
         (@arg BATCH: -b --batch +takes_value "Pass a json for batch jobs")
         (@arg debug: -v ... "Sets the level of debugging information")
-    ).get_matches();
+    )
+    .get_matches();
 
     let batch = matches.value_of("BATCH");
     match batch {

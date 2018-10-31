@@ -443,24 +443,40 @@ fn compress_image_resource(input_file: &str, key: &str, path: &str, output_root:
     let mut f = f.expect("writing raw filename");
     let _resp = f.write_all(&data.unwrap().as_slice());
 
-    let img = image::open(raw_filename).expect("opening raw filename");
-    let (width, _height) = img.dimensions();
-    let compressed_filename = output_root
-        .join("images")
-        .join(format!("{}.{}", &key, &ext)); // pay attention to this, it might be the wrong name.
+    let imgr = image::open(raw_filename);
+    match imgr {
+        Ok(img) => {
+            let (width, _height) = img.dimensions();
+            let compressed_filename = output_root
+                .join("images")
+                .join(format!("{}.{}", &key, &ext)); // pay attention to this, it might be the wrong name.
 
-    if width > MAX_WIDTH {
-        let resized = img.resize(MAX_WIDTH, MAX_HEIGHT, FilterType::Lanczos3);
-        resized
-            .save(&compressed_filename)
-            .expect("Saving image failed");
-    } else {
-        let data = doc.get_resource(key);
+            if width > MAX_WIDTH {
+                let resized = img.resize(MAX_WIDTH, MAX_HEIGHT, FilterType::Lanczos3);
+                resized
+                    .save(&compressed_filename)
+                    .expect("Saving image failed");
+            } else {
+                let data = doc.get_resource(key);
 
-        let f = fs::File::create(&compressed_filename);
-        assert!(f.is_ok());
-        let mut f = f.expect("error writting compressed file");
-        let _resp = f.write_all(&data.unwrap().as_slice());
+                let f = fs::File::create(&compressed_filename);
+                assert!(f.is_ok());
+                let mut f = f.expect("error writting compressed file");
+                let _resp = f.write_all(&data.unwrap().as_slice());
+            }
+        }
+        Err(e) => {
+            println!("Error with image {}: {}", &path, &e);
+            println!("Just copying it...");
+            let compressed_filename = output_root
+                .join("images")
+                .join(format!("{}.{}", &key, &ext)); // pay attention to this, it might be the wrong name.
+
+            let f = fs::File::create(&compressed_filename);
+            assert!(f.is_ok());
+            let mut f = f.expect("error writting file");
+            let _resp = f.write_all(&data.unwrap().as_slice());
+        }
     }
 }
 

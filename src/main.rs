@@ -221,7 +221,9 @@ fn compress_cover(book: &Book) {
 
             ctx.add("chapter", &chapter);
 
-            println!("Spine: {}", &doc.spine);
+            for (k) in doc.spine.iter() {
+                println!("spine {}", &k);
+            }
 
             let next_chapter_id = if doc.spine.len() > 2 {
                 &doc.spine[2]

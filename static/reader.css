@@ -91,6 +91,15 @@
 		max-width: 100%;
 		width: 100%;
 	}
+	a.para-anchor {
+		display: inline-block;
+		font-size: 0.7rem;
+		color: lightslategray;
+		text-decoration: none;
+	}
+	p.para-highlight {
+		background-color: rgba(212, 202, 202, 0.808);
+	}
 	div.illustration.hundreds {
 		max-width: 100% !important;
 		width: 100% !important;

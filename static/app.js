@@ -22,3 +22,13 @@ function navigateWithArrows(ev) {
 }
 
 document.addEventListener('keyup', navigateWithArrows);
+
+
+if (location.hash) {
+  setTimeout(() => {
+    console.log(location.hash)
+    var para = document.getElementById(location.hash.slice(1)).parentElement;
+    para.classList.add("para-highlight");
+    para.scrollIntoView({ behavior: "instant", block: "end", inline: "nearest" });
+  }, 1000)
+}

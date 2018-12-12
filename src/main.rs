@@ -223,9 +223,9 @@ fn compress_cover(book: &Book) {
             ctx.add("chapter", &chapter);
 
             println!("spine len: {}", &doc.spine.len());
-            for k in doc.spine.iter() {
-                println!("spine {}", &k);
-            }
+            // for k in doc.spine.iter() {
+            //     println!("spine {}", &k);
+            // }
 
             let next_chapter_id = if doc.spine.len() > 2 {
                 &doc.spine[1]
@@ -368,19 +368,26 @@ fn process_html_resource(
     let mut chapter = HashMap::new();
     chapter.insert("title", "");
     chapter.insert("filename", &filename);
-
     ctx.add("chapter", &chapter);
 
-    //  write fragment
-    // println!("chap key {}", &key);
-
     let str_data = doc.get_resource_str(key);
-
-    let fixed_content = str_data.unwrap().replace("../images", "images");
+    let mut fixed_content = str_data.unwrap().replace("../images", "images");
+    let mut i = 0;
+    while fixed_content.contains("</p>") {
+        i = i + 1;
+        let anchor = format!(
+            "<a class=\"para-anchor\" id=\"para-{}\" href=\"#para-{}\">&sect;</a>[/p]",
+            &i, &i
+        );
+        // println!("{}", &anchor);
+        fixed_content = fixed_content.replacen("</p>", &anchor, 1);
+    }
+    fixed_content = fixed_content.replace("[/p]", "</p>");
 
     let document = Html::parse_document(&fixed_content);
     let selector = Selector::parse("body").unwrap();
     let body = document.select(&selector).next().unwrap();
+
     ctx.add("content", &body.inner_html());
 
     let link_selector = Selector::parse("a").unwrap();

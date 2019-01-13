@@ -1921,7 +1921,7 @@
   "report": {
     "success": 0,
     "elapsed_time": "",
-    "error": 0,
+    "error": 1,
     "skipped": 0
   }
 }

@@ -135,130 +135,137 @@ fn compress_cover(book: &Book) {
     assert!(doc.is_ok());
     let mut doc = doc.unwrap();
     println!("Extracting cover...");
-    let cover_id = doc.get_cover_id().unwrap();
-    let cover_mime = doc
-        .get_resource_mime(&cover_id)
-        .expect("Can't get cover mime");
-    println!("Cover mime: {}", &cover_mime);
-    let cover_data = doc.get_cover();
+    match doc.get_cover_id() {
+        Ok(cover_id) => {
+            let cover_mime = doc
+                .get_resource_mime(&cover_id)
+                .expect("Can't get cover mime");
+            println!("Cover mime: {}", &cover_mime);
+            let cover_data = doc.get_cover();
 
-    match cover_data {
-        Err(error) => {
-            println!("this book has no cover: {}", &error);
-            // create cover html ...
-            let metadata = get_metadata(&book);
+            match cover_data {
+                Err(error) => {
+                    println!("this book has no cover: {}", &error);
+                    // create cover html ...
+                    let metadata = get_metadata(&book);
 
-            let mut ctx = Context::new();
-            for (key, val) in metadata.into_iter() {
-                ctx.add(key, &val);
+                    let mut ctx = Context::new();
+                    for (key, val) in metadata.into_iter() {
+                        ctx.add(key, &val);
+                    }
+
+                    let mut chapter = HashMap::new();
+                    chapter.insert("title", "Table of Contents");
+                    chapter.insert("filename", "index.html");
+
+                    ctx.add("chapter", &chapter);
+
+                    let next_chapter_id = if doc.spine.len() > 2 {
+                        &doc.spine[2]
+                    } else {
+                        &doc.spine[0]
+                    };
+                    let next_chapter = &doc.resources.get(next_chapter_id);
+
+                    match next_chapter {
+                        Some(s) => ctx.add("next", &extract_filename(&s.0)),
+                        None => ctx.add("next", &false),
+                    }
+
+                    let rendered = TERA
+                        .render("index.html", &ctx)
+                        .expect("Failed to render template");
+
+                    let f = fs::File::create(output_root.join("index.html"));
+                    assert!(f.is_ok());
+                    let mut f = f.unwrap();
+                    let _resp = f.write_all(&rendered.as_bytes());
+                }
+                Ok(data) => {
+                    let tempfile = match cover_mime.as_ref() {
+                        "image/png" => "temp/cover.png",
+                        "image/jpg" | "image/jpeg" => "temp/cover.jpg",
+                        _ => "temp/cover.jpg",
+                    };
+                    let f = fs::File::create(&tempfile);
+                    assert!(f.is_ok());
+                    let mut f = f.unwrap();
+                    let _resp = f.write_all(&data);
+                    println!("Compressing cover...");
+
+                    let img = image::open(&tempfile).unwrap();
+                    let resized = img.resize(COVER_WIDTH, COVER_WIDTH, FilterType::Lanczos3);
+                    resized
+                        .save(output_root.join("cover.jpg"))
+                        .expect("Saving image failed");
+
+                    let ref mut background = image::RgbaImage::new(ICON_WIDTH, ICON_WIDTH);
+                    for (_x, _y, pixel) in background.enumerate_pixels_mut() {
+                        *pixel = image::Rgba([33, 33, 33, 0]);
+                    }
+
+                    let img = image::open(&tempfile).unwrap();
+                    let resized_icon = img.resize(ICON_WIDTH, ICON_WIDTH, FilterType::Lanczos3);
+                    resized_icon
+                        .save(output_root.join("cover_resized.jpg"))
+                        .expect("Saving resized cover");
+
+                    imageops::overlay(
+                        background,
+                        &resized_icon.to_rgba(),
+                        (ICON_WIDTH - resized_icon.width()) / 2,
+                        0,
+                    );
+
+                    background
+                        .save(output_root.join("icon.png"))
+                        .expect("Saving icon failed");
+
+                    // create cover html ...
+                    let metadata = get_metadata(&book);
+
+                    let mut ctx = Context::new();
+                    for (key, val) in metadata.into_iter() {
+                        ctx.add(key, &val);
+                    }
+
+                    let mut chapter = HashMap::new();
+                    chapter.insert("title", "Table of Contents");
+                    chapter.insert("filename", "index.html");
+
+                    ctx.add("chapter", &chapter);
+
+                    println!("spine len: {}", &doc.spine.len());
+                    // for k in doc.spine.iter() {
+                    //     println!("spine {}", &k);
+                    // }
+
+                    let next_chapter_id = if doc.spine.len() > 2 {
+                        &doc.spine[1]
+                    } else {
+                        &doc.spine[1]
+                    };
+                    let next_chapter = &doc.resources.get(next_chapter_id);
+
+                    match next_chapter {
+                        Some(s) => ctx.add("next", &extract_filename(&s.0)),
+                        None => ctx.add("next", &false),
+                    }
+
+                    let rendered = TERA
+                        .render("index.html", &ctx)
+                        .expect("Failed to render template");
+
+                    let f = fs::File::create(output_root.join("index.html"));
+                    assert!(f.is_ok());
+                    let mut f = f.unwrap();
+                    let _resp = f.write_all(&rendered.as_bytes());
+                }
             }
-
-            let mut chapter = HashMap::new();
-            chapter.insert("title", "Table of Contents");
-            chapter.insert("filename", "index.html");
-
-            ctx.add("chapter", &chapter);
-
-            let next_chapter_id = if doc.spine.len() > 2 {
-                &doc.spine[2]
-            } else {
-                &doc.spine[0]
-            };
-            let next_chapter = &doc.resources.get(next_chapter_id);
-
-            match next_chapter {
-                Some(s) => ctx.add("next", &extract_filename(&s.0)),
-                None => ctx.add("next", &false),
-            }
-
-            let rendered = TERA
-                .render("index.html", &ctx)
-                .expect("Failed to render template");
-
-            let f = fs::File::create(output_root.join("index.html"));
-            assert!(f.is_ok());
-            let mut f = f.unwrap();
-            let _resp = f.write_all(&rendered.as_bytes());
         }
-        Ok(data) => {
-            let tempfile = match cover_mime.as_ref() {
-                "image/png" => "temp/cover.png",
-                "image/jpg" | "image/jpeg" => "temp/cover.jpg",
-                _ => "temp/cover.jpg",
-            };
-            let f = fs::File::create(&tempfile);
-            assert!(f.is_ok());
-            let mut f = f.unwrap();
-            let _resp = f.write_all(&data);
-            println!("Compressing cover...");
 
-            let img = image::open(&tempfile).unwrap();
-            let resized = img.resize(COVER_WIDTH, COVER_WIDTH, FilterType::Lanczos3);
-            resized
-                .save(output_root.join("cover.jpg"))
-                .expect("Saving image failed");
-
-            let ref mut background = image::RgbaImage::new(ICON_WIDTH, ICON_WIDTH);
-            for (_x, _y, pixel) in background.enumerate_pixels_mut() {
-                *pixel = image::Rgba([33, 33, 33, 0]);
-            }
-
-            let img = image::open(&tempfile).unwrap();
-            let resized_icon = img.resize(ICON_WIDTH, ICON_WIDTH, FilterType::Lanczos3);
-            resized_icon
-                .save(output_root.join("cover_resized.jpg"))
-                .expect("Saving resized cover");
-
-            imageops::overlay(
-                background,
-                &resized_icon.to_rgba(),
-                (ICON_WIDTH - resized_icon.width()) / 2,
-                0,
-            );
-
-            background
-                .save(output_root.join("icon.png"))
-                .expect("Saving icon failed");
-
-            // create cover html ...
-            let metadata = get_metadata(&book);
-
-            let mut ctx = Context::new();
-            for (key, val) in metadata.into_iter() {
-                ctx.add(key, &val);
-            }
-
-            let mut chapter = HashMap::new();
-            chapter.insert("title", "Table of Contents");
-            chapter.insert("filename", "index.html");
-
-            ctx.add("chapter", &chapter);
-
-            println!("spine len: {}", &doc.spine.len());
-            // for k in doc.spine.iter() {
-            //     println!("spine {}", &k);
-            // }
-
-            let next_chapter_id = if doc.spine.len() > 2 {
-                &doc.spine[1]
-            } else {
-                &doc.spine[1]
-            };
-            let next_chapter = &doc.resources.get(next_chapter_id);
-
-            match next_chapter {
-                Some(s) => ctx.add("next", &extract_filename(&s.0)),
-                None => ctx.add("next", &false),
-            }
-
-            let rendered = TERA
-                .render("index.html", &ctx)
-                .expect("Failed to render template");
-
-            let f = fs::File::create(output_root.join("index.html"));
-            assert!(f.is_ok());
-            let mut f = f.unwrap();
-            let _resp = f.write_all(&rendered.as_bytes());
+        Err(e) => {
+            println!("Problem with cover: {}", e);
         }
     }
 }

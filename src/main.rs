@@ -541,6 +541,7 @@ fn process_book(book: &Book) {
         &metadata.get("author").unwrap(),
         &metadata.get("date").unwrap()
     );
+    println!("path: {}", book.epub);
 
     copy_template_resources(&output_root);
 

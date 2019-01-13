@@ -1,4 +1,4 @@
-/* 
+/*
 add timestamp to all HTML includes and the respective file names
 
 */
@@ -71,12 +71,24 @@ lazy_static! {
     };
 }
 
-fn extract_filename(path: &str) -> &str {
-    let r = Path::new(path)
+fn replace_if(s: String, from: &str, to: &str) -> String {
+    if s.contains(from) {
+        s.replace(from, to)
+    } else {
+        s
+    }
+}
+
+fn extract_filename(path: &str) -> String {
+    let r = replace_if(path.to_string(), ".xhtml", ".html");
+
+    let w = Path::new(&r)
         .file_name()
         .and_then(OsStr::to_str)
         .unwrap_or_default();
-    return r;
+
+    let s = w.to_string();
+    return s;
 }
 
 fn copy_index_to_cover(output_root: &Path) {
@@ -155,7 +167,7 @@ fn compress_cover(book: &Book) {
             let next_chapter = &doc.resources.get(next_chapter_id);
 
             match next_chapter {
-                Some(s) => ctx.add("next", extract_filename(&s.0)),
+                Some(s) => ctx.add("next", &extract_filename(&s.0)),
                 None => ctx.add("next", &false),
             }
 
@@ -235,7 +247,7 @@ fn compress_cover(book: &Book) {
             let next_chapter = &doc.resources.get(next_chapter_id);
 
             match next_chapter {
-                Some(s) => ctx.add("next", extract_filename(&s.0)),
+                Some(s) => ctx.add("next", &extract_filename(&s.0)),
                 None => ctx.add("next", &false),
             }
 
@@ -327,7 +339,8 @@ fn process_toc(input_file: &str, metadata: &HashMap<&str, String>, key: &str, ou
 
     let str_data = doc.get_resource_str(key);
 
-    let fixed_content = str_data.unwrap().replace("../images", "images");
+    let mut fixed_content = str_data.unwrap().replace("../images", "images");
+    fixed_content = fixed_content.replace(".xhtml", ".html");
 
     let document = Html::parse_document(&fixed_content);
     let selector = Selector::parse("body").unwrap();
@@ -366,13 +379,20 @@ fn process_html_resource(
     }
 
     let mut chapter = HashMap::new();
+    let new_path = replace_if(filename.to_string(), ".xhtml", ".html");
     chapter.insert("title", "");
-    chapter.insert("filename", &filename);
+    chapter.insert("filename", &new_path);
     ctx.add("chapter", &chapter);
 
     let str_data = doc.get_resource_str(key);
     let mut fixed_content = str_data.unwrap().replace("../images", "images");
     let mut i = 0;
+
+    let link_selector = Selector::parse("a").unwrap();
+    let total_links = Html::parse_document(&fixed_content)
+        .select(&link_selector)
+        .count();
+
     while fixed_content.contains("</p>") {
         i = i + 1;
         let anchor = format!(
@@ -383,15 +403,13 @@ fn process_html_resource(
         fixed_content = fixed_content.replacen("</p>", &anchor, 1);
     }
     fixed_content = fixed_content.replace("[/p]", "</p>");
+    fixed_content = fixed_content.replace(".xhtml", ".html"); // needed because some epubs have broken XHTML inside them.
 
     let document = Html::parse_document(&fixed_content);
     let selector = Selector::parse("body").unwrap();
     let body = document.select(&selector).next().unwrap();
 
     ctx.add("content", &body.inner_html());
-
-    let link_selector = Selector::parse("a").unwrap();
-    let total_links = document.select(&link_selector).count();
 
     let current_chapter_position = &doc
         .spine
@@ -404,7 +422,7 @@ fn process_html_resource(
         let next_chapter = &doc.resources.get(next_chapter_id);
 
         match next_chapter {
-            Some(s) => ctx.add("next", extract_filename(&s.0)),
+            Some(s) => ctx.add("next", &extract_filename(&s.0)),
             None => ctx.add("next", &false),
         }
     }
@@ -414,7 +432,7 @@ fn process_html_resource(
         let previous_chapter = &doc.resources.get(previous_chapter_id);
 
         match previous_chapter {
-            Some(s) => ctx.add("previous", extract_filename(&s.0)),
+            Some(s) => ctx.add("previous", &extract_filename(&s.0)),
             None => ctx.add("previous", &false),
         }
     }
@@ -423,7 +441,7 @@ fn process_html_resource(
         .render("page.html", &ctx)
         .expect("Failed to render template");
 
-    let fragment_filename = output_root.join(&filename);
+    let fragment_filename = output_root.join(&filename.replace(".xhtml", ".html"));
     let f = fs::File::create(&fragment_filename);
     assert!(f.is_ok());
     let mut f = f.unwrap();
@@ -551,6 +569,7 @@ fn process_book(book: &Book) {
             if max_links < total_links {
                 max_links = total_links;
                 toc_id = key;
+                println!("\nFOUND TOC {} LINKS IN {}", &max_links, &key);
             }
         } else if mime.contains("css") {
             print!("C");

@@ -145,7 +145,7 @@ fn compress_cover(book: &Book) {
 
             match cover_data {
                 Err(error) => {
-                    println!("this book has no cover: {}", &error);
+                    println!("this book has a broken cover: {}", &error);
                     // create cover html ...
                     let metadata = get_metadata(&book);
 

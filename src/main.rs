@@ -17,10 +17,11 @@ extern crate serde;
 extern crate serde_json;
 #[macro_use]
 extern crate serde_derive;
+extern crate csv;
 
 use epub::doc::EpubDoc;
 use fs_extra::dir::*;
-use image::{imageops, FilterType, GenericImage, ImageBuffer};
+use image::{imageops, FilterType, GenericImage};
 use scraper::{Html, Selector};
 use std::collections::HashMap;
 use std::ffi::OsStr;
@@ -28,7 +29,6 @@ use std::fs;
 use std::fs::File;
 use std::io::{self, Write};
 use std::path::Path;
-use std::time::{SystemTime, UNIX_EPOCH};
 use tera::{Context, Tera};
 
 const MAX_WIDTH: u32 = 600;
@@ -559,6 +559,28 @@ fn copy_template_resources(output_root: &Path) {
         .expect("failed copying static resource");
 }
 
+fn generate_spine(book: &Book) {
+    let doc = EpubDoc::new(&book.epub);
+    let output_root = &book.output_folder;
+    assert!(doc.is_ok());
+    let doc = doc.unwrap();
+    let output_root = Path::new(output_root);
+    let spine_path = output_root.join("spine.csv");
+    let mut writer = csv::Writer::from_path(spine_path).expect("Can't create spine writer");
+
+    for (i, c) in doc.spine.iter().enumerate() {
+        let index = format!("{}", (i + 1));
+        let path = &doc.resources[c].0;
+        let filename = Path::new(path)
+            .file_name()
+            .and_then(OsStr::to_str)
+            .unwrap_or_default()
+            .replace(".xhtml", ".html");
+        writer.write_record(&[&index, &filename]).expect("Can't write spine item");
+    }
+    writer.flush().expect("Can't write spine.csv");
+}
+
 fn process_book(book: &Book) {
     let doc = EpubDoc::new(&book.epub);
     let output_root = &book.output_folder;
@@ -584,6 +606,7 @@ fn process_book(book: &Book) {
     println!("path: {}", book.epub);
 
     copy_template_resources(&output_root);
+    generate_spine(&book);
 
     let num_resources = doc.resources.len();
     println!("Total resources listed in Epub: {}", num_resources);

@@ -1,1 +1,19 @@
-{"report":{"success":11,"skipped":4,"error":0,"elapsed_time":""},"books":[{"info_url":"https://www.himalayanacademy.com/view/evernew-evernow","base_url":"https://www.himalayanacademy.com/media/books/evernew-evernow/web","description":"Today’s youth face many challenges and complexities as they grow up. They need tools that help them confront their insecurities and fears so they can find a safe and peaceful place within themselves, no matter what life’s circumstances may be. In this short story, Ravi learns how to live in the eternal now and not be consumed by worries of the future or regrets of the past.","epub":"../hap-epub-export-tool/books/evernew-evernow/evernew-evernow.epub","output_folder":"../hap-epub-export-tool/books/evernew-evernow/web","status":"success","error":""}]}
+{
+  "books": [
+    {
+      "base_url": "https://www.himalayanacademy.com/media/books/evernew-evernow/web",
+      "description": "Today’s youth face many challenges and complexities as they grow up. They need tools that help them confront their insecurities and fears so they can find a safe and peaceful place within themselves, no matter what life’s circumstances may be. In this short story, Ravi learns how to live in the eternal now and not be consumed by worries of the future or regrets of the past.",
+      "epub": "../hap-epub-export-tool/books/evernew-evernow/evernew-evernow.epub",
+      "error": "",
+      "info_url": "https://www.himalayanacademy.com/view/evernew-evernow",
+      "output_folder": "../hap-epub-export-tool/books/evernew-evernow/web",
+      "status": "success"
+    }
+  ],
+  "report": {
+    "elapsed_time": "",
+    "error": 0,
+    "skipped": 4,
+    "success": 11
+  }
+}

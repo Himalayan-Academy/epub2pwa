@@ -1,0 +1,19 @@
+{
+  "report": {
+    "success": 5,
+    "skipped": 1,
+    "error": 0,
+    "elapsed_time": ""
+  },
+  "books": [
+    {
+      "info_url": "https://www.himalayanacademy.com/view/the-guru-chronicles",
+      "base_url": "https://www.himalayanacademy.com/media/books/the-guru-chronicles/web",
+      "description": "The illustrated stories of Satguru Sivaya Subramuniyaswami, his guru Siva Yogaswami and five preceding masters, who all held truth in the palm of their hand and inspired slumbering souls to \"Know the Self\"",
+      "epub": "../hap-epub-export-tool/books/the-guru-chronicles/the-guru-chronicles.epub",
+      "output_folder": "../hap-epub-export-tool/books/the-guru-chronicles/the-guru-chronicles/web",
+      "status": "success",
+      "error": ""
+    }
+  ]
+}

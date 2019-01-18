@@ -1,6 +1,6 @@
 @media only screen and (min-width: 768px) {
 	body {
-		margin: 0;
+		margin: 0 !important;
 	}
 	header {
 		height: 48px;
@@ -86,5 +86,30 @@
 		max-height: 80vh;
 		position: relative;
 		margin: auto;
+	}
+	div.illustration.hundred {
+		max-width: 100%;
+		width: 100%;
+	}
+	a.para-anchor {
+		display: inline-block;
+		font-size: 0.7rem;
+		color: lightslategray;
+		text-decoration: none;
+	}
+	p.para-highlight {
+		background-color: rgba(212, 202, 202, 0.808);
+	}
+	div.illustration.hundreds {
+		max-width: 100% !important;
+		width: 100% !important;
+	}
+	div.illustration.hundred img {
+		max-width: 100% !important;
+		width: 100% !important;
+	}
+	div.illustration.hundreds img {
+		max-width: 100% !important;
+		width: 100% !important;
 	}
 }

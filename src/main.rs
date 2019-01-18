@@ -1,4 +1,4 @@
-/* 
+/*
 add timestamp to all HTML includes and the respective file names
 
 */
@@ -17,10 +17,11 @@ extern crate serde;
 extern crate serde_json;
 #[macro_use]
 extern crate serde_derive;
+extern crate csv;
 
 use epub::doc::EpubDoc;
 use fs_extra::dir::*;
-use image::{imageops, FilterType, GenericImage, ImageBuffer};
+use image::{imageops, FilterType, GenericImage};
 use scraper::{Html, Selector};
 use std::collections::HashMap;
 use std::ffi::OsStr;
@@ -28,10 +29,10 @@ use std::fs;
 use std::fs::File;
 use std::io::{self, Write};
 use std::path::Path;
-use std::time::{SystemTime, UNIX_EPOCH};
 use tera::{Context, Tera};
 
-const MAX_WIDTH: u32 = 400;
+const MAX_WIDTH: u32 = 600;
+const MAX_HEIGHT: u32 = 900;
 const COVER_WIDTH: u32 = 700;
 const ICON_WIDTH: u32 = 192;
 static DEFAULT_OUTPUT_FOLDER: &'static str = "web/";
@@ -43,12 +44,22 @@ struct Book {
     description: String,
     epub: String,
     output_folder: String,
+    status: String,
+    error: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Clone)]
 struct BatchJob {
-    templates: String,
+    report: BatchJobReport,
     books: Vec<Book>,
+}
+
+#[derive(Serialize, Deserialize, Clone)]
+struct BatchJobReport {
+    success: u32,
+    skipped: u32,
+    error: u32,
+    elapsed_time: String,
 }
 
 lazy_static! {
@@ -60,26 +71,40 @@ lazy_static! {
     };
 }
 
-fn extract_filename(path: &str) -> &str {
-    let r = Path::new(path)
+fn replace_if(s: String, from: &str, to: &str) -> String {
+    if s.contains(from) {
+        s.replace(from, to)
+    } else {
+        s
+    }
+}
+
+fn extract_filename(path: &str) -> String {
+    let r = replace_if(path.to_string(), ".xhtml", ".html");
+
+    let w = Path::new(&r)
         .file_name()
         .and_then(OsStr::to_str)
         .unwrap_or_default();
-    return r;
+
+    let s = w.to_string();
+    return s;
 }
 
 fn copy_index_to_cover(output_root: &Path) {
     fs::copy(
         output_root.join("index.html"),
         output_root.join("cover.html"),
-    ).expect("Can't create cover.html");
+    )
+    .expect("Can't create cover.html");
 }
 
 fn move_service_worker(output_root: &Path) {
     fs::copy(
         output_root.join("resources/static/sw.js"),
         output_root.join("sw.js"),
-    ).expect("Can't create sw.js");
+    )
+    .expect("Can't create sw.js");
 }
 
 fn get_metadata(book: &Book) -> HashMap<&str, String> {
@@ -110,11 +135,136 @@ fn compress_cover(book: &Book) {
     assert!(doc.is_ok());
     let mut doc = doc.unwrap();
     println!("Extracting cover...");
-    let cover_data = doc.get_cover();
+    match doc.get_cover_id() {
+        Ok(cover_id) => {
+            let cover_mime = doc
+                .get_resource_mime(&cover_id)
+                .expect("Can't get cover mime");
+            println!("Cover mime: {}", &cover_mime);
+            let cover_data = doc.get_cover();
 
-    match cover_data {
-        Err(error) => {
-            println!("this book has no cover: {}", &error);
+            match cover_data {
+                Err(error) => {
+                    println!("this book has a broken cover: {}", &error);
+                    // create cover html ...
+                    let metadata = get_metadata(&book);
+
+                    let mut ctx = Context::new();
+                    for (key, val) in metadata.into_iter() {
+                        ctx.add(key, &val);
+                    }
+
+                    let mut chapter = HashMap::new();
+                    chapter.insert("title", "Table of Contents");
+                    chapter.insert("filename", "index.html");
+
+                    ctx.add("chapter", &chapter);
+
+                    let next_chapter_id = if doc.spine.len() > 2 {
+                        &doc.spine[2]
+                    } else {
+                        &doc.spine[0]
+                    };
+                    let next_chapter = &doc.resources.get(next_chapter_id);
+
+                    match next_chapter {
+                        Some(s) => ctx.add("next", &extract_filename(&s.0)),
+                        None => ctx.add("next", &false),
+                    }
+
+                    let rendered = TERA
+                        .render("index.html", &ctx)
+                        .expect("Failed to render template");
+
+                    let f = fs::File::create(output_root.join("index.html"));
+                    assert!(f.is_ok());
+                    let mut f = f.unwrap();
+                    let _resp = f.write_all(&rendered.as_bytes());
+                }
+                Ok(data) => {
+                    let tempfile = match cover_mime.as_ref() {
+                        "image/png" => "temp/cover.png",
+                        "image/jpg" | "image/jpeg" => "temp/cover.jpg",
+                        _ => "temp/cover.jpg",
+                    };
+                    let f = fs::File::create(&tempfile);
+                    assert!(f.is_ok());
+                    let mut f = f.unwrap();
+                    let _resp = f.write_all(&data);
+                    println!("Compressing cover...");
+
+                    let img = image::open(&tempfile).unwrap();
+                    let resized = img.resize(COVER_WIDTH, COVER_WIDTH, FilterType::Lanczos3);
+                    resized
+                        .save(output_root.join("cover.jpg"))
+                        .expect("Saving image failed");
+
+                    let ref mut background = image::RgbaImage::new(ICON_WIDTH, ICON_WIDTH);
+                    for (_x, _y, pixel) in background.enumerate_pixels_mut() {
+                        *pixel = image::Rgba([33, 33, 33, 0]);
+                    }
+
+                    let img = image::open(&tempfile).unwrap();
+                    let resized_icon = img.resize(ICON_WIDTH, ICON_WIDTH, FilterType::Lanczos3);
+                    resized_icon
+                        .save(output_root.join("cover_resized.jpg"))
+                        .expect("Saving resized cover");
+
+                    imageops::overlay(
+                        background,
+                        &resized_icon.to_rgba(),
+                        (ICON_WIDTH - resized_icon.width()) / 2,
+                        0,
+                    );
+
+                    background
+                        .save(output_root.join("icon.png"))
+                        .expect("Saving icon failed");
+
+                    // create cover html ...
+                    let metadata = get_metadata(&book);
+
+                    let mut ctx = Context::new();
+                    for (key, val) in metadata.into_iter() {
+                        ctx.add(key, &val);
+                    }
+
+                    let mut chapter = HashMap::new();
+                    chapter.insert("title", "Table of Contents");
+                    chapter.insert("filename", "index.html");
+
+                    ctx.add("chapter", &chapter);
+
+                    println!("spine len: {}", &doc.spine.len());
+                    // for k in doc.spine.iter() {
+                    //     println!("spine {}", &k);
+                    // }
+
+                    let next_chapter_id = if doc.spine.len() > 2 {
+                        &doc.spine[1]
+                    } else {
+                        &doc.spine[1]
+                    };
+                    let next_chapter = &doc.resources.get(next_chapter_id);
+
+                    match next_chapter {
+                        Some(s) => ctx.add("next", &extract_filename(&s.0)),
+                        None => ctx.add("next", &false),
+                    }
+
+                    let rendered = TERA
+                        .render("index.html", &ctx)
+                        .expect("Failed to render template");
+
+                    let f = fs::File::create(output_root.join("index.html"));
+                    assert!(f.is_ok());
+                    let mut f = f.unwrap();
+                    let _resp = f.write_all(&rendered.as_bytes());
+                }
+            }
+        }
+        Err(e) => {
+            println!("This book has no cover: {}", e);
             // create cover html ...
             let metadata = get_metadata(&book);
 
@@ -137,77 +287,7 @@ fn compress_cover(book: &Book) {
             let next_chapter = &doc.resources.get(next_chapter_id);
 
             match next_chapter {
-                Some(s) => ctx.add("next", extract_filename(&s.0)),
-                None => ctx.add("next", &false),
-            }
-
-            let rendered = TERA
-                .render("index.html", &ctx)
-                .expect("Failed to render template");
-
-            let f = fs::File::create(output_root.join("index.html"));
-            assert!(f.is_ok());
-            let mut f = f.unwrap();
-            let _resp = f.write_all(&rendered.as_bytes());
-        }
-        Ok(data) => {
-            let f = fs::File::create("temp/cover.jpg");
-            assert!(f.is_ok());
-            let mut f = f.unwrap();
-            let _resp = f.write_all(&data);
-            println!("Compressing cover...");
-
-            let img = image::open("temp/cover.jpg").unwrap();
-            let resized = img.resize(COVER_WIDTH, COVER_WIDTH, FilterType::Lanczos3);
-            resized
-                .save(output_root.join("cover.jpg"))
-                .expect("Saving image failed");
-
-            let ref mut background = image::RgbaImage::new(ICON_WIDTH, ICON_WIDTH);
-            for (_x, _y, pixel) in background.enumerate_pixels_mut() {
-                *pixel = image::Rgba([33, 33, 33, 0]);
-            }
-
-            let img = image::open("temp/cover.jpg").unwrap();
-            let resized_icon = img.resize(ICON_WIDTH, ICON_WIDTH, FilterType::Lanczos3);
-            resized_icon
-                .save(output_root.join("cover_resized.jpg"))
-                .expect("Saving resized cover");
-
-            imageops::overlay(
-                background,
-                &resized_icon.to_rgba(),
-                (ICON_WIDTH - resized_icon.width()) / 2,
-                0,
-            );
-
-            background
-                .save(output_root.join("icon.png"))
-                .expect("Saving icon failed");
-
-            // create cover html ...
-            let metadata = get_metadata(&book);
-
-            let mut ctx = Context::new();
-            for (key, val) in metadata.into_iter() {
-                ctx.add(key, &val);
-            }
-
-            let mut chapter = HashMap::new();
-            chapter.insert("title", "Table of Contents");
-            chapter.insert("filename", "index.html");
-
-            ctx.add("chapter", &chapter);
-
-            let next_chapter_id = if doc.spine.len() > 2 {
-                &doc.spine[2]
-            } else {
-                &doc.spine[1]
-            };
-            let next_chapter = &doc.resources.get(next_chapter_id);
-
-            match next_chapter {
-                Some(s) => ctx.add("next", extract_filename(&s.0)),
+                Some(s) => ctx.add("next", &extract_filename(&s.0)),
                 None => ctx.add("next", &false),
             }
 
@@ -299,7 +379,8 @@ fn process_toc(input_file: &str, metadata: &HashMap<&str, String>, key: &str, ou
 
     let str_data = doc.get_resource_str(key);
 
-    let fixed_content = str_data.unwrap().replace("../images", "images");
+    let mut fixed_content = str_data.unwrap().replace("../images", "images");
+    fixed_content = fixed_content.replace(".xhtml", ".html");
 
     let document = Html::parse_document(&fixed_content);
     let selector = Selector::parse("body").unwrap();
@@ -338,25 +419,37 @@ fn process_html_resource(
     }
 
     let mut chapter = HashMap::new();
+    let new_path = replace_if(filename.to_string(), ".xhtml", ".html");
     chapter.insert("title", "");
-    chapter.insert("filename", &filename);
-
+    chapter.insert("filename", &new_path);
     ctx.add("chapter", &chapter);
 
-    //  write fragment
-    // println!("chap key {}", &key);
-
     let str_data = doc.get_resource_str(key);
+    let mut fixed_content = str_data.unwrap().replace("../images", "images");
+    let mut i = 0;
 
-    let fixed_content = str_data.unwrap().replace("../images", "images");
+    let link_selector = Selector::parse("a").unwrap();
+    let total_links = Html::parse_document(&fixed_content)
+        .select(&link_selector)
+        .count();
+
+    while fixed_content.contains("</p>") {
+        i = i + 1;
+        let anchor = format!(
+            "<a class=\"para-anchor\" id=\"para-{}\" href=\"#para-{}\">&sect;</a>[/p]",
+            &i, &i
+        );
+        // println!("{}", &anchor);
+        fixed_content = fixed_content.replacen("</p>", &anchor, 1);
+    }
+    fixed_content = fixed_content.replace("[/p]", "</p>");
+    fixed_content = fixed_content.replace(".xhtml", ".html"); // needed because some epubs have broken XHTML inside them.
 
     let document = Html::parse_document(&fixed_content);
     let selector = Selector::parse("body").unwrap();
     let body = document.select(&selector).next().unwrap();
-    ctx.add("content", &body.inner_html());
 
-    let link_selector = Selector::parse("a").unwrap();
-    let total_links = document.select(&link_selector).count();
+    ctx.add("content", &body.inner_html());
 
     let current_chapter_position = &doc
         .spine
@@ -369,7 +462,7 @@ fn process_html_resource(
         let next_chapter = &doc.resources.get(next_chapter_id);
 
         match next_chapter {
-            Some(s) => ctx.add("next", extract_filename(&s.0)),
+            Some(s) => ctx.add("next", &extract_filename(&s.0)),
             None => ctx.add("next", &false),
         }
     }
@@ -379,7 +472,7 @@ fn process_html_resource(
         let previous_chapter = &doc.resources.get(previous_chapter_id);
 
         match previous_chapter {
-            Some(s) => ctx.add("previous", extract_filename(&s.0)),
+            Some(s) => ctx.add("previous", &extract_filename(&s.0)),
             None => ctx.add("previous", &false),
         }
     }
@@ -388,7 +481,7 @@ fn process_html_resource(
         .render("page.html", &ctx)
         .expect("Failed to render template");
 
-    let fragment_filename = output_root.join(&filename);
+    let fragment_filename = output_root.join(&filename.replace(".xhtml", ".html"));
     let f = fs::File::create(&fragment_filename);
     assert!(f.is_ok());
     let mut f = f.unwrap();
@@ -412,27 +505,44 @@ fn compress_image_resource(input_file: &str, key: &str, path: &str, output_root:
     // write raw file
     let f = fs::File::create(&raw_filename);
     assert!(f.is_ok());
-    let mut f = f.unwrap();
+    let mut f = f.expect("writing raw filename");
     let _resp = f.write_all(&data.unwrap().as_slice());
 
-    let img = image::open(raw_filename).unwrap();
-    let (width, _height) = img.dimensions();
-    let compressed_filename = output_root
-        .join("images")
-        .join(format!("{}.{}", &key, &ext)); // pay attention to this, it might be the wrong name.
+    let imgr = image::open(raw_filename);
+    match imgr {
+        Ok(img) => {
+            let (width, _height) = img.dimensions();
+            let compressed_filename = output_root
+                .join("images")
+                .join(format!("{}.{}", &key, &ext)); // pay attention to this, it might be the wrong name.
 
-    if width > MAX_WIDTH {
-        let resized = img.resize(MAX_WIDTH, MAX_WIDTH, FilterType::Lanczos3);
-        resized
-            .save(&compressed_filename)
-            .expect("Saving image failed");
-    } else {
-        let data = doc.get_resource(key);
+            if width > MAX_WIDTH {
+                let resized = img.resize(MAX_WIDTH, MAX_HEIGHT, FilterType::Lanczos3);
+                resized
+                    .save(&compressed_filename)
+                    .expect("Saving image failed");
+            } else {
+                let data = doc.get_resource(key);
 
-        let f = fs::File::create(&compressed_filename);
-        assert!(f.is_ok());
-        let mut f = f.unwrap();
-        let _resp = f.write_all(&data.unwrap().as_slice());
+                let f = fs::File::create(&compressed_filename);
+                assert!(f.is_ok());
+                let mut f = f.expect("error writting compressed file");
+                let _resp = f.write_all(&data.unwrap().as_slice());
+            }
+        }
+        Err(e) => {
+            println!("Error with image {}: {}", &path, &e);
+            println!("Just copying it...");
+            let data = doc.get_resource(key);
+            let compressed_filename = output_root
+                .join("images")
+                .join(format!("{}.{}", &key, &ext)); // pay attention to this, it might be the wrong name.
+
+            let f = fs::File::create(&compressed_filename);
+            assert!(f.is_ok());
+            let mut f = f.expect("error writting file");
+            let _resp = f.write_all(&data.unwrap().as_slice());
+        }
     }
 }
 
@@ -447,6 +557,28 @@ fn copy_template_resources(output_root: &Path) {
     };
     copy_with_progress("static", output_root.join("resources"), &options, handle)
         .expect("failed copying static resource");
+}
+
+fn generate_spine(book: &Book) {
+    let doc = EpubDoc::new(&book.epub);
+    let output_root = &book.output_folder;
+    assert!(doc.is_ok());
+    let doc = doc.unwrap();
+    let output_root = Path::new(output_root);
+    let spine_path = output_root.join("spine.csv");
+    let mut writer = csv::Writer::from_path(spine_path).expect("Can't create spine writer");
+
+    for (i, c) in doc.spine.iter().enumerate() {
+        let index = format!("{}", (i + 1));
+        let path = &doc.resources[c].0;
+        let filename = Path::new(path)
+            .file_name()
+            .and_then(OsStr::to_str)
+            .unwrap_or_default()
+            .replace(".xhtml", ".html");
+        writer.write_record(&[&index, &filename]).expect("Can't write spine item");
+    }
+    writer.flush().expect("Can't write spine.csv");
 }
 
 fn process_book(book: &Book) {
@@ -471,8 +603,10 @@ fn process_book(book: &Book) {
         &metadata.get("author").unwrap(),
         &metadata.get("date").unwrap()
     );
+    println!("path: {}", book.epub);
 
     copy_template_resources(&output_root);
+    generate_spine(&book);
 
     let num_resources = doc.resources.len();
     println!("Total resources listed in Epub: {}", num_resources);
@@ -499,6 +633,7 @@ fn process_book(book: &Book) {
             if max_links < total_links {
                 max_links = total_links;
                 toc_id = key;
+                println!("\nFOUND TOC {} LINKS IN {}", &max_links, &key);
             }
         } else if mime.contains("css") {
             print!("C");
@@ -524,40 +659,30 @@ fn process_book(book: &Book) {
 }
 
 fn process_batch_job(path: &str) {
-    // Open the file in read-only mode.
     let file = File::open(path).expect("Can't open batch job json file");
 
-    // Read the JSON contents of the file as an instance of `User`.
-    let batch: BatchJob = serde_json::from_reader(file).expect("Can't decode batch job json file");
-    let mut processed: Vec<Book> = vec![];
-    let mut non_processed: Vec<Book> = vec![];
-    for book in batch.books {
-        if Path::new(&book.epub).exists() {
-            process_book(&book);
-            &processed.push(book.clone());
-            println!("webapp: {}", &book.base_url);
+    let mut batch: BatchJob =
+        serde_json::from_reader(file).expect("Can't decode batch job json file");
+    for i in 0..batch.books.len() {
+        if batch.books[i].status == "pending" {
+            let book = batch.books[i].clone();
+            if Path::new(&book.epub).exists() {
+                process_book(&book);
+                batch.books[i].status = "success".to_string();
+                batch.report.success += 1;
+                println!("webapp: {}\n", &book.base_url);
+            } else {
+                batch.books[i].status = "error".to_string();
+                batch.books[i].error = format!("can't find book file: {}", &book.epub);
+                batch.report.error += 1;
+            }
         } else {
-            &non_processed.push(book.clone());
-            println!("can't find book file: {}", &book.epub);
+            batch.report.skipped += 1;
         }
-        // println!("\n");
+
+        let j = serde_json::to_string(&mut batch).expect("Can't serialize report");
+        fs::write(path, &j).expect("Can't write batch json");
     }
-
-    // Serialize it to a JSON string.
-    let j = serde_json::to_string(&processed).expect("Can't display processed queue");
-    let nj = serde_json::to_string(&non_processed).expect("Can't display non processed queue");
-
-    // Print, write to a file, or send to an HTTP server.
-
-    let start = SystemTime::now();
-    let since_the_epoch = start
-        .duration_since(UNIX_EPOCH)
-        .expect("Time went backwards");
-    let secs = since_the_epoch.as_secs().to_string();
-    fs::write(format!("batchjob.{}.success.json", &secs), &j)
-        .expect("Can't write success batch report");
-    fs::write(format!("batchjob.{}.errors.json", &secs), &nj)
-        .expect("Can't write error batch report");
 }
 
 fn main() {
@@ -572,7 +697,8 @@ fn main() {
         (@arg OUTPUT: -o --output +takes_value "Sets the output folder")
         (@arg BATCH: -b --batch +takes_value "Pass a json for batch jobs")
         (@arg debug: -v ... "Sets the level of debugging information")
-    ).get_matches();
+    )
+    .get_matches();
 
     let batch = matches.value_of("BATCH");
     match batch {
@@ -596,6 +722,8 @@ fn main() {
                 epub: epub.to_string(),
                 description: description.to_string(),
                 output_folder: output_folder.to_string(),
+                status: "pending".to_string(),
+                error: "".to_string(),
             };
 
             process_book(&book);

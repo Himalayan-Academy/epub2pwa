@@ -2,7 +2,6 @@
 add timestamp to all HTML includes and the respective file names
 
 */
-#![feature(nll)]
 extern crate epub;
 extern crate image;
 extern crate scraper;
@@ -21,7 +20,8 @@ extern crate csv;
 
 use epub::doc::EpubDoc;
 use fs_extra::dir::*;
-use image::{imageops, FilterType, GenericImage};
+use image::imageops;
+use image::imageops::FilterType;
 use scraper::{Html, Selector};
 use std::collections::HashMap;
 use std::ffi::OsStr;
@@ -29,6 +29,7 @@ use std::fs;
 use std::fs::File;
 use std::io::{self, Write};
 use std::path::Path;
+use std::path::PathBuf;
 use tera::{Context, Tera};
 
 const MAX_WIDTH: u32 = 600;
@@ -79,16 +80,13 @@ fn replace_if(s: String, from: &str, to: &str) -> String {
     }
 }
 
-fn extract_filename(path: &str) -> String {
-    let r = replace_if(path.to_string(), ".xhtml", ".html");
-
-    let w = Path::new(&r)
-        .file_name()
-        .and_then(OsStr::to_str)
-        .unwrap_or_default();
-
-    let s = w.to_string();
-    return s;
+fn extract_filename(path: &Path) -> String {
+    
+    let mut path2 = PathBuf::from(path);
+    path2.set_extension(".html");
+    
+    return path2.into_os_string().into_string().unwrap();
+    
 }
 
 fn copy_index_to_cover(output_root: &Path) {
@@ -151,14 +149,14 @@ fn compress_cover(book: &Book) {
 
                     let mut ctx = Context::new();
                     for (key, val) in metadata.into_iter() {
-                        ctx.add(key, &val);
+                        ctx.insert(key, &val);
                     }
 
                     let mut chapter = HashMap::new();
                     chapter.insert("title", "Table of Contents");
                     chapter.insert("filename", "index.html");
 
-                    ctx.add("chapter", &chapter);
+                    ctx.insert("chapter", &chapter);
 
                     let next_chapter_id = if doc.spine.len() > 2 {
                         &doc.spine[2]
@@ -168,8 +166,8 @@ fn compress_cover(book: &Book) {
                     let next_chapter = &doc.resources.get(next_chapter_id);
 
                     match next_chapter {
-                        Some(s) => ctx.add("next", &extract_filename(&s.0)),
-                        None => ctx.add("next", &false),
+                        Some(s) => ctx.insert("next", &extract_filename(&s.0)),
+                        None => ctx.insert("next", &false),
                     }
 
                     let rendered = TERA
@@ -212,8 +210,8 @@ fn compress_cover(book: &Book) {
 
                     imageops::overlay(
                         background,
-                        &resized_icon.to_rgba(),
-                        (ICON_WIDTH - resized_icon.width()) / 2,
+                        &resized_icon.to_rgba8(),
+                        ((ICON_WIDTH - resized_icon.width()) / 2).into(),
                         0,
                     );
 
@@ -226,14 +224,14 @@ fn compress_cover(book: &Book) {
 
                     let mut ctx = Context::new();
                     for (key, val) in metadata.into_iter() {
-                        ctx.add(key, &val);
+                        ctx.insert(key, &val);
                     }
 
                     let mut chapter = HashMap::new();
                     chapter.insert("title", "Table of Contents");
                     chapter.insert("filename", "index.html");
 
-                    ctx.add("chapter", &chapter);
+                    ctx.insert("chapter", &chapter);
 
                     println!("spine len: {}", &doc.spine.len());
                     // for k in doc.spine.iter() {
@@ -248,8 +246,8 @@ fn compress_cover(book: &Book) {
                     let next_chapter = &doc.resources.get(next_chapter_id);
 
                     match next_chapter {
-                        Some(s) => ctx.add("next", &extract_filename(&s.0)),
-                        None => ctx.add("next", &false),
+                        Some(s) => ctx.insert("next", &extract_filename(&s.0)),
+                        None => ctx.insert("next", &false),
                     }
 
                     let rendered = TERA
@@ -270,14 +268,14 @@ fn compress_cover(book: &Book) {
 
             let mut ctx = Context::new();
             for (key, val) in metadata.into_iter() {
-                ctx.add(key, &val);
+                ctx.insert(key, &val);
             }
 
             let mut chapter = HashMap::new();
             chapter.insert("title", "Table of Contents");
             chapter.insert("filename", "index.html");
 
-            ctx.add("chapter", &chapter);
+            ctx.insert("chapter", &chapter);
 
             let next_chapter_id = if doc.spine.len() > 2 {
                 &doc.spine[2]
@@ -287,8 +285,8 @@ fn compress_cover(book: &Book) {
             let next_chapter = &doc.resources.get(next_chapter_id);
 
             match next_chapter {
-                Some(s) => ctx.add("next", &extract_filename(&s.0)),
-                None => ctx.add("next", &false),
+                Some(s) => ctx.insert("next", &extract_filename(&s.0)),
+                None => ctx.insert("next", &false),
             }
 
             let rendered = TERA
@@ -345,7 +343,7 @@ fn process_css_resource(input_file: &str, key: &str, path: &str, output_root: &P
 fn process_manifest(_input_file: &str, metadata: &HashMap<&str, String>, output_root: &Path) {
     let mut ctx = Context::new();
     for (key, val) in metadata.into_iter() {
-        ctx.add(key, &val);
+        ctx.insert(key, &val);
     }
 
     let rendered = TERA
@@ -365,14 +363,14 @@ fn process_toc(input_file: &str, metadata: &HashMap<&str, String>, key: &str, ou
     let mut doc = doc.unwrap();
     let mut ctx = Context::new();
     for (key, val) in metadata.into_iter() {
-        ctx.add(key, &val);
+        ctx.insert(key, &val);
     }
 
     let mut chapter = HashMap::new();
     chapter.insert("title", "Table of Contents");
     chapter.insert("filename", "toc.html");
 
-    ctx.add("chapter", &chapter);
+    ctx.insert("chapter", &chapter);
 
     //  write fragment
     println!("toc key {}", &key);
@@ -385,7 +383,7 @@ fn process_toc(input_file: &str, metadata: &HashMap<&str, String>, key: &str, ou
     let document = Html::parse_document(&fixed_content);
     let selector = Selector::parse("body").unwrap();
     let body = document.select(&selector).next().unwrap();
-    ctx.add("content", &body.inner_html());
+    ctx.insert("content", &body.inner_html());
 
     let rendered = TERA
         .render("page.html", &ctx)
@@ -415,14 +413,14 @@ fn process_html_resource(
 
     let mut ctx = Context::new();
     for (key, val) in metadata.into_iter() {
-        ctx.add(key, &val);
+        ctx.insert(key, &val);
     }
 
     let mut chapter = HashMap::new();
     let new_path = replace_if(filename.to_string(), ".xhtml", ".html");
     chapter.insert("title", "");
     chapter.insert("filename", &new_path);
-    ctx.add("chapter", &chapter);
+    ctx.insert("chapter", &chapter);
 
     let str_data = doc.get_resource_str(key);
     let mut fixed_content = str_data.unwrap().replace("../images", "images");
@@ -449,7 +447,7 @@ fn process_html_resource(
     let selector = Selector::parse("body").unwrap();
     let body = document.select(&selector).next().unwrap();
 
-    ctx.add("content", &body.inner_html());
+    ctx.insert("content", &body.inner_html());
 
     let current_chapter_position = &doc
         .spine
@@ -462,8 +460,8 @@ fn process_html_resource(
         let next_chapter = &doc.resources.get(next_chapter_id);
 
         match next_chapter {
-            Some(s) => ctx.add("next", &extract_filename(&s.0)),
-            None => ctx.add("next", &false),
+            Some(s) => ctx.insert("next", &extract_filename(&s.0)),
+            None => ctx.insert("next", &false),
         }
     }
 
@@ -472,8 +470,8 @@ fn process_html_resource(
         let previous_chapter = &doc.resources.get(previous_chapter_id);
 
         match previous_chapter {
-            Some(s) => ctx.add("previous", &extract_filename(&s.0)),
-            None => ctx.add("previous", &false),
+            Some(s) => ctx.insert("previous", &extract_filename(&s.0)),
+            None => ctx.insert("previous", &false),
         }
     }
 
@@ -511,7 +509,7 @@ fn compress_image_resource(input_file: &str, key: &str, path: &str, output_root:
     let imgr = image::open(raw_filename);
     match imgr {
         Ok(img) => {
-            let (width, _height) = img.dimensions();
+            let width = img.width();
             let compressed_filename = output_root
                 .join("images")
                 .join(format!("{}.{}", &key, &ext)); // pay attention to this, it might be the wrong name.
@@ -620,7 +618,7 @@ fn process_book(book: &Book) {
     let mut max_links = 0;
     let mut toc_id = "";
     for (key, val) in resources.iter() {
-        let path = &val.0;
+        let path = &val.1;
         let mime = &doc.get_resource_mime_by_path(&path).unwrap_or_default();
 
         if mime.contains("image/") && !mime.contains("gif") {
@@ -687,7 +685,7 @@ fn process_batch_job(path: &str) {
 
 fn main() {
     let matches = clap_app!(epub2pwa =>
-        (version: "1.0")
+        (version: "2.0")
         (author: "Andre Alves Garzia <andre@andregarzia.com")
         (about: "Converts ePub books into PWAs")
         (@arg INFOURL: -i --infourl +takes_value "Info URL for the book")
